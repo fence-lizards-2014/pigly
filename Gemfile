@@ -8,6 +8,7 @@ gem 'rails', '3.2.18'
 
 gem 'pg'
 gem 'pry'
+gem 'httparty'
 
 
 # Gems used only for assets and not required

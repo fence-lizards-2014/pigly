@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140705033942) do
+ActiveRecord::Schema.define(:version => 20140705164017) do
 
   create_table "menu_items", :force => true do |t|
     t.integer  "restaurant_id"
-    t.text     "content"
+    t.string   "name"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
@@ -25,8 +25,13 @@ ActiveRecord::Schema.define(:version => 20140705033942) do
     t.string   "location"
     t.string   "latitude"
     t.string   "longitude"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "address"
+    t.string   "phone"
+    t.string   "postal_code"
+    t.string   "website"
+    t.string   "locu_id"
   end
 
   create_table "users", :force => true do |t|
@@ -40,8 +45,11 @@ ActiveRecord::Schema.define(:version => 20140705033942) do
   end
 
   create_table "votes", :force => true do |t|
-    t.integer "menu_item_id"
-    t.integer "user_id"
+    t.string   "direction"
+    t.integer  "menu_item_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

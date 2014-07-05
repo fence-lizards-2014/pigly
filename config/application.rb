@@ -8,7 +8,7 @@ require "active_resource/railtie"
 require "sprockets/railtie"
 
 require "bcrypt"
-
+require "httparty"
 require "pry"
 
 # require "rails/test_unit/railtie"
