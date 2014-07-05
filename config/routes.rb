@@ -1,5 +1,5 @@
 Pigly::Application.routes.draw do
-  root to: "users#index"
+  root to: "pigly#index"
   resources :users
   resources :restaurants do
     resources :menu_items

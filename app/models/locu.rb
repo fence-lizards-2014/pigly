@@ -3,7 +3,7 @@ class Locu
   base_uri 'http://api.locu.com/v1_0'
 
   def initialize
-    @app_key = "2771774cdba12aabe38cbff9aff18487e0f82d44"
+    @app_key = LOCU_API_KEY
   end
 
   def restaurants
