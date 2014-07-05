@@ -10,7 +10,6 @@ gem 'pg'
 gem 'pry'
 gem 'httparty'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -29,6 +28,7 @@ gem 'jquery-ui-rails'
 group :development, :test do
   gem 'rspec-rails', '=2.14'
   gem 'factory_girl_rails', "~> 4.2.1"
+  gem 'faker'
 end
 
 group :test do

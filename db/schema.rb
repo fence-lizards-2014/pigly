@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20140705164017) do
   create_table "users", :force => true do |t|
     t.string   "gender"
     t.integer  "age"
-    t.integer  "zip"
+    t.string   "zip"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
