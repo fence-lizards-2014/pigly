@@ -1,19 +1,18 @@
 class VoteController < ApplicationController
-	# REVIEW COMMENTED CODE
-	# def create
- #      @voteable = Menu.find(params[:answer])
-    
- #    end
 
- #    @voteable.votes.create(direction: params[:direction])
+	def create
+    @vote = Vote.new(vote_params) #type up or down
+    @vote.save!
+  end
 
- #    respond_to do |format|
- #      format.html { redirect_to :back }
- #      format.json {
- #        count = @voteable.votes.where(direction: "up").count - @voteable.votes.where(direction: "down").count
- #        render json: { value: count }
- #      }
 
-	# end
+	private
+
+	def vote_params
+		params.require(:vote).permit(:direction, :menu_item_id, :user_id)
+	end 
 
 end
+
+
+

@@ -1,22 +1,24 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
-  def index
-    @users = User.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
+  def signin
+   user = User.find_by_email(params[:email])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to :back
+    else
+      flash.now.alert = "Invalid email or password"
+      render "new"
     end
   end
 
   # GET /users/1
   # GET /users/1.json
+  # Upon 'user profile click', 
   def show
     @user = User.find(params[:id])
-
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.erb, add button to edit
       format.json { render json: @user }
     end
   end
@@ -25,7 +27,6 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -40,12 +41,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(params[:user])
-
+    @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
+        format.html { redirect_to :back, notice: 'User was successfully created.' }
+        # format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(params[:user])
+      if @user.update_attributes(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,14 +80,10 @@ class UsersController < ApplicationController
   #     format.json { head :no_content }
   #   end
   # end
+  private
 
-  #USER AUTH SIGN IN
-  # user = User.find_by_email(params[:email])
-  # if user && user.authenticate(params[:password])
-  #   session[:user_id] = user.id
-  #   redirect_to admin_root_path, :notice => "Welcome back, #{user.email}"
-  # else
-  #   flash.now.alert = "Invalid email or password"
-  #   render "new"
-  # end
+  def user_params
+    params.require(:user).permit(:gender, :age, :zip, :email, :password)
+  end 
+  
 end
