@@ -1,5 +1,9 @@
-<%= form_for(@user) do |u| %>
-	Email: <%= u.text_field :email %><br/>
-	Password: <%= u.text_field :password %><br/>
-  <%= u.submit %>
+
+
+<%= form_tag(:action => 'create') do %>
+	<%= label_tag(:email) %>:
+	<%= text_field_tag(:email) %><br>
+	<%= label_tag(:password) %>:
+	<%= password_field_tag :password %><br>
+	<%= submit_tag("Log In") %>
 <% end %>
