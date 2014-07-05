@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  # Upon 'user profile click', 
+  # Upon 'user profile click',
   def show
     @user = User.find(params[:id])
     respond_to do |format|
@@ -57,11 +57,11 @@ class UsersController < ApplicationController
     end
   end
 
-  
-  # private
 
-  # def user_params
-  #   params.require(:user).permit(:gender, :age, :zip, :email, :password)
-  # end 
-  
+  private
+
+  def user_params
+    params.require(:user).permit(:gender, :age, :zip, :email, :password, votes_attributes: [ :direction ])
+  end
+
 end

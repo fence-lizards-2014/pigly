@@ -9,8 +9,8 @@ class VoteController < ApplicationController
 	private
 
 	def vote_params
-		params.require(:vote).permit(:direction, :menu_item_id, :user_id)
-	end 
+		params.require(:vote).permit(:direction)
+	end
 
 end
 
