@@ -1,5 +1,6 @@
 Pigly::Application.routes.draw do
   root to: "pigly#index"
+  get "logout", :to => "sessions#destroy", as: "logout"
   resources :users, only: [:show, :new, :edit, :create, :update]
   resources :sessions, only: [:create, :new, :destroy]
   resources :restaurants do
