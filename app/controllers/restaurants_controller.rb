@@ -1,4 +1,4 @@
-class RestaurantController < ApplicationController
+class RestaurantsController < ApplicationController
 	
 	def index
 		# render view restaurants/index.html.erb (rest by name)
@@ -6,12 +6,13 @@ class RestaurantController < ApplicationController
 	end
 
 	def search #post
-		@restaurants = Restaurant.find_by_name(params[:name])
+		@restaurant = Restaurant.find_by_name(params[:restaurant][:name])
+		redirect_to restaurant_path(@restaurant)
 	end 
 
 
 	def show
-		@restaurant = Restaurant.find_by(params[:id])
+		@restaurant = Restaurant.find(params[:id])
 		@menu_items = @restaurant.menu_items
 		# render view restaurants/.id.html.erb
 		# lists top 5 menu items with content
@@ -29,7 +30,7 @@ class RestaurantController < ApplicationController
 
 
 	def show_profile
-		@restaurant = Restaurant.find_by(params[:id])
+		@restaurant = Restaurant.find(params[:id])
 		#render new view: profile.html.erb
 					#show dashboard of restaurant and patrons (=users)
 					#min 3 dashboards 

@@ -1,7 +1,8 @@
 class PiglyController < ApplicationController
 	
 	def index
-		# links to index.html.erb
+		# homepage
+		@restaurant = Restaurant.new
 		# session check in erb
 	end
 
@@ -14,5 +15,3 @@ class PiglyController < ApplicationController
 
 end
   
-
- 

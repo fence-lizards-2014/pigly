@@ -1,16 +1,4 @@
 class UsersController < ApplicationController
-  # GET /users
-  # GET /users.json
-  def signin
-   user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to :back
-    else
-      flash.now.alert = "Invalid email or password"
-      render "new"
-    end
-  end
 
   # GET /users/1
   # GET /users/1.json
@@ -41,10 +29,10 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    @user = User.new(params[:user])
     respond_to do |format|
       if @user.save
-        format.html { redirect_to :back, notice: 'User was successfully created.' }
+        format.html { redirect_to root_path, notice: 'User was successfully created.' }
         # format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -59,7 +47,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(user_params)
+      if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
@@ -69,21 +57,11 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
-  # def destroy
-  #   @user = User.find(params[:id])
-  #   @user.destroy
+  
+  # private
 
-  #   respond_to do |format|
-  #     format.html { redirect_to users_url }
-  #     format.json { head :no_content }
-  #   end
-  # end
-  private
-
-  def user_params
-    params.require(:user).permit(:gender, :age, :zip, :email, :password)
-  end 
+  # def user_params
+  #   params.require(:user).permit(:gender, :age, :zip, :email, :password)
+  # end 
   
 end

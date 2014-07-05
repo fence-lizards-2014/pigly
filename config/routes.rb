@@ -1,10 +1,15 @@
 Pigly::Application.routes.draw do
   root to: "pigly#index"
-  resources :users
+  resources :users, only: [:show, :new, :edit, :create, :update]
+  resources :sessions, only: [:create, :new, :destroy]
   resources :restaurants do
-    resources :menu_items
+    post 'search', on: :collection, as: "search"
+    resources :menu_items do 
+      resources :votes, only: :create
+    end
   end
 
+  # get '/search', to: 'pigly#search'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
