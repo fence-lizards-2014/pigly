@@ -2,21 +2,17 @@
 
 var Vote = {
   init: function() {
-
     $('a#upvote').on('ajax:success', this.changeVotes)
-
   },
 
   changeVotes: function(event, data, status, xhr) {
-    event.preventDefault();
-    this.parentNode.querySelector('p').innerHTML = data.upvote_count
+    debugger
+    console.log("seba")
+    // event.preventDefault();
+    // this.parentNode.querySelector('p').innerHTML = data.upvote_count
   }
-
 }
 
-
-
-
-$(document).ready.(function(){
+$(document).ready(function(){
   Vote.init();
 })
