@@ -5,10 +5,15 @@
 		margin: 0;
 	}
 
+	input[type="text"], textarea {
+  background-color: #fff5ee; 
+	}
+
 	#wrapper {
 		display: table;
 		min-height: 100%; 
 		width:100%;
+
 	}
 
 	.main_search {
