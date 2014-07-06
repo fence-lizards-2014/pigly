@@ -12,7 +12,7 @@ class Locu
 
   def menu venue_id
     self.class.get("/venue/#{venue_id}/?api_key=#{@app_key}")
-    # results["objects"].first["menus"].each { |menu| menu["sections"].first["subsections"].first["contents"].each { |item| Restaurant.find_by_locu_id(venue_id).menu_items << MenuItem.create(name: item["name"])}}
+    # results["objects"].first["menus"].each { |menu| menu["sections"].first["subsections"].first["contents"].each { |item| Restaurant.find_by_locu_id(venue_id).items << Item.create(name: item["name"])}}
   end
 
   def populate_menu

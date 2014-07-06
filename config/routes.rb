@@ -5,7 +5,7 @@ Pigly::Application.routes.draw do
   resources :sessions, only: [:create, :new, :destroy]
   resources :restaurants do
     post 'search', on: :collection, as: "search"
-    resources :menu_items do
+    resources :items do
     end
   end
 

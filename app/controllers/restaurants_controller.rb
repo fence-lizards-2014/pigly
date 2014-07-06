@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
 
 	def show
 		@restaurant = Restaurant.find(params[:id])
-		@menu_items = @restaurant.menu_items
+		@items = @restaurant.items
 		# render view restaurants/.id.html.erb
 		# lists top 5 menu items with content
 				#add logic to list top 5 based on highest votes
@@ -39,7 +39,7 @@ class RestaurantsController < ApplicationController
 	private
 
 	def restaurant_params
-		params.require(:restaurant).permit(:name, :location, :latitude, :longitude, :address, :phone, :postal_code, :website, :locu_id, menu_items: [ :name ])
+		params.require(:restaurant).permit(:name, :location, :latitude, :longitude, :address, :phone, :postal_code, :website, :locu_id, items: [ :name ])
 	end
 
 end
