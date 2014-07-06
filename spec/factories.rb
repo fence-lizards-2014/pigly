@@ -12,14 +12,14 @@ FactoryGirl.define do
     location { "San Francisco" }
   end
 
-  factory :menu_item do
+  factory :item do
     name { Faker::Lorem.word }
     restaurant_id { rand(1..25) }
   end
 
   factory :vote do
     direction { ["up", "down"].sample }
-    menu_item_id { rand(1..100) }
+    item_id { rand(1..100) }
     user_id { rand(1..25) }
   end
 end

@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20140705164017) do
 
-  create_table "menu_items", :force => true do |t|
+  create_table "items", :force => true do |t|
     t.integer  "restaurant_id"
     t.string   "name"
     t.datetime "created_at",    :null => false
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(:version => 20140705164017) do
 
   create_table "votes", :force => true do |t|
     t.string   "direction"
-    t.integer  "menu_item_id"
+    t.integer  "item_id"
     t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

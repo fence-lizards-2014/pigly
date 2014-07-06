@@ -4,7 +4,7 @@ class VotesController < ApplicationController
     user_id = current_user.id
 
     if user_id
-      vote = Vote.new(menu_item_id: params[:menu_item_id], user_id: user_id, direction: params[:direction])
+      vote = Vote.new(item_id: params[:item_id], user_id: user_id, direction: params[:direction])
       vote.save
     end
 
