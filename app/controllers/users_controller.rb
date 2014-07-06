@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  # Upon 'user profile click', 
+  # Upon 'user profile click',
   def show
     @user = User.find(params[:id])
     respond_to do |format|
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     respond_to do |format|
       if @user.save
         format.html { redirect_to root_path, notice: 'User was successfully created.' }
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(params[:user])
+      if @user.update_attributes(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
@@ -57,11 +57,11 @@ class UsersController < ApplicationController
     end
   end
 
-  
-  # private
 
-  # def user_params
-  #   params.require(:user).permit(:gender, :age, :zip, :email, :password)
-  # end 
-  
+  private
+
+  def user_params
+    params.require(:user).permit(:gender, :age, :zip, :email, :password, votes_attributes: [ :direction ])
+  end
+
 end

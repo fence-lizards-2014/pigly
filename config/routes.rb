@@ -1,13 +1,15 @@
 Pigly::Application.routes.draw do
   root to: "pigly#index"
+  get "logout", :to => "sessions#destroy", as: "logout"
   resources :users, only: [:show, :new, :edit, :create, :update]
   resources :sessions, only: [:create, :new, :destroy]
   resources :restaurants do
     post 'search', on: :collection, as: "search"
-    resources :menu_items do 
-      resources :votes, only: :create
+    resources :menu_items do
     end
   end
+
+  resources :votes, only: :create
 
   # get '/search', to: 'pigly#search'
 
