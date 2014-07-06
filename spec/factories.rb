@@ -15,8 +15,8 @@ FactoryGirl.define do
   end
 
   factory :item do
+    association :restaurant
     name { Faker::Lorem.word }
-    restaurant_id { rand(1..25) }
   end
 
   factory :vote do
