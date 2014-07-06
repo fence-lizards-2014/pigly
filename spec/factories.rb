@@ -10,16 +10,18 @@ FactoryGirl.define do
   factory :restaurant do
     name { Faker::Company.name }
     location { "San Francisco" }
+    latitude { 37.749917 }
+    longitude { -122.417908 }
   end
 
   factory :item do
+    association :restaurant
     name { Faker::Lorem.word }
-    restaurant_id { rand(1..25) }
   end
 
   factory :vote do
+    association :item
+    association :user
     direction { ["up", "down"].sample }
-    item_id { rand(1..100) }
-    user_id { rand(1..25) }
   end
 end
