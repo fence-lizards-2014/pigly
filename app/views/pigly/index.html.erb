@@ -6,7 +6,8 @@
 	<% end %>
 
 	<div class='main_search'>
-		<h1 class="logo">Pigly</h1>
+		<div><%= image_tag "Pigly-logo.png", :class => "main_logo" %></div>
+		</br>
 		<%= form_for @restaurant, url: search_restaurants_path do |restaurant_form| %>
 			<%= restaurant_form.text_field :name, :placeholder => "Search For A Restaurant..." %>
 		<% end %> 

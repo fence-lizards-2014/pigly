@@ -5,6 +5,10 @@
 		margin: 0;
 	}
 
+	input[type="text"], textarea {
+  background-color: #fff5ee; 
+	}
+
 	#wrapper {
 		min-height: 100%; 
 		width:100%;
@@ -12,7 +16,7 @@
 	}
 
 	#demo1 {
-		position:absolute; 
+		position:fixed; 
 		width: 100%;
 		/*
 		top: 0;
@@ -21,6 +25,10 @@
 
 	#menu {
 		display: none;
+	}
+
+	.restaurant_container {
+		padding-top: 4em;
 	}
 
 	.content {

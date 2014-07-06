@@ -1,14 +1,16 @@
-<h1><%= @restaurant.name %> </h1>
+<div class="restaurant_container">
+	<h1><%= @restaurant.name %> </h1>
+	<% @items.each do |item| %>
 
-<% @items.each do |item| %>
+	  <%= div_for(item) do %>
+	    <p><%= item.name %></p>
+	    <div class="votes">
+	      <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
+	      <%= link_to 'Up!', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote'%>
+	      <p> <%= ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round %>%</p>
+	      <%= link_to 'Down!', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote'%>
+	    </div>
+	  <% end %>
+	<% end %>
+</div>
 
-  <%= div_for(item) do %>
-    <p><%= item.name %></p>
-    <div class="votes">
-      <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
-      <%= link_to 'Up!', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote'%>
-      <p> <%= ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round %>%</p>
-      <%= link_to 'Down!', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote'%>
-    </div>
-  <% end %>
-<% end %>
