@@ -13,5 +13,6 @@ describe UsersController do
     get :show, id: user
     expect(assigns(:user)).to eq user
   end
+
 end
 

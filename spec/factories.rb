@@ -10,6 +10,8 @@ FactoryGirl.define do
   factory :restaurant do
     name { Faker::Company.name }
     location { "San Francisco" }
+    latitude { 37.749917 }
+    longitude { -122.417908 }
   end
 
   factory :item do
