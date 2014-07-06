@@ -1,16 +1,31 @@
 <div class="restaurant_container">
 	<h1><%= @restaurant.name %> </h1>
-	<% @items.each do |item| %>
-
-	  <%= div_for(item) do %>
-	    <p><%= item.name %></p>
-	    <div class="votes">
-	      <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
-	      <%= link_to 'Up!', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote'%>
-	      <p> <%= ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round %>%</p>
-	      <%= link_to 'Down!', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote'%>
-	    </div>
-	  <% end %>
-	<% end %>
+	<div id="tab-container" class="tab-container">
+	  <ul class='tab-bar'>
+	    <li class='tab'><a href="#menu-tab">Menu</a></li>
+	    <li class='tab'><a href="#profile-tab">Profile</a></li>
+	  </ul>
+	  <div id="menu-tab">
+	    <h2>Menu</h2>
+	    <% @items.each do |item| %>
+			  <%= div_for(item) do %>
+			    <p><%= item.name %></p>
+			    <div class="votes">
+			      <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
+			      <%= link_to 'Up!', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote'%>
+			      <span class="vote-holder"> <%= ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round %>%</span>
+			      <%= link_to 'Down!', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote'%>
+			    </div>
+			  <% end %>
+			<% end %>
+	  </div>
+	  <div id="profile-tab">
+	    <h2>Profile</h2>
+	    <p>Visualizations here</p>
+	  </div>
+	</div>
 </div>
 
+<script type="text/javascript"> 
+  $(document).ready(function(){ $('#tab-container').easytabs(); });
+</script> 
