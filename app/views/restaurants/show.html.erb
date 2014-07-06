@@ -1,11 +1,11 @@
 <h1><%= @restaurant.name %> </h1>
 
-<% @menu_items.each do |item| %>
+<% @items.each do |item| %>
 
   <%= div_for(item) do %>
     <div class="votes">
-      <%= link_to 'Up!', votes_path(direction: 'up', menu_item_id: item.id), remote: true, method: 'post', id: 'upvote'%>
-      <%= link_to 'Down!', votes_path(direction: 'down', menu_item_id: item.id), remote: true, method: 'post', id: 'downvote'%>
+      <%= link_to 'Up!', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote'%>
+      <%= link_to 'Down!', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote'%>
     </div>
     <p><%= item.name %></p>
   <% end %>
