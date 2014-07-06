@@ -10,10 +10,9 @@ class RestaurantsController < ApplicationController
 		redirect_to restaurant_path(@restaurant)
 	end
 
-
 	def show
 		@restaurant = Restaurant.find(params[:id])
-		@items = @restaurant.items
+		@items = @restaurant.items.sort_by! { |item| ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round }.reverse
 		# render view restaurants/.id.html.erb
 		# lists top 5 menu items with content
 				#add logic to list top 5 based on highest votes
@@ -27,7 +26,6 @@ class RestaurantsController < ApplicationController
 
 		# upon 'profile click', render new view: profile.html.erb
 	end
-
 
 	def show_profile
 		@restaurant = Restaurant.find(params[:id])
