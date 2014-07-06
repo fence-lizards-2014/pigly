@@ -10,10 +10,30 @@
 	}
 
 	#wrapper {
-		display: table;
 		min-height: 100%; 
 		width:100%;
+		display: table;
+	}
 
+	#demo1 {
+		position:fixed; 
+		width: 100%;
+		/*
+		top: 0;
+		right: 0;*/
+	}
+
+	#menu {
+		display: none;
+	}
+
+	.restaurant_container {
+		padding-top: 4em;
+	}
+
+	.content {
+		padding-top: 4em;
+		display: table;
 	}
 
 	.main_search {

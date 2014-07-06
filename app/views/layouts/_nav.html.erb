@@ -1,0 +1,18 @@
+<div id="demo1"></div>
+	<ul id="menu">
+	<% if logged_in? %>
+		<li><a class="scroll" href="#">Your Profile</a></li>
+		<li><a class="scroll" href="/logout">Sign Out</a></li>
+	<% else %>
+		<li><a class="scroll" href="/sessions/new">Sign In</a></li>
+		<li><a class="scroll" href="#usage">Sign Up</a></li>
+	<% end %>
+	</ul>
+
+<script>
+	$(function(){
+		$('#menu').slicknav({
+			prependTo:'#demo1'
+		});
+	});
+</script>
