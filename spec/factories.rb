@@ -20,8 +20,8 @@ FactoryGirl.define do
   end
 
   factory :vote do
+    association :item
+    association :user
     direction { ["up", "down"].sample }
-    item_id { rand(1..100) }
-    user_id { rand(1..25) }
   end
 end
