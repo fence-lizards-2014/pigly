@@ -9,14 +9,15 @@ class VotesController < ApplicationController
     end
 
     # Put this on a get route and available con the show
-    # current_item = MenuItem.find(params[:menu_item_id])
-    # upvote_count = current_item.votes.where(direction: 'up').count
     # @downvote_count = current_item.votes.where(direction: 'down').count
 
-    # respond_to do |format|
-    #   msg = { total: upvote_count }
-    #   format.json { render :json => msg }
-    # end
+    current_item = Item.find(params[:item_id])
+    percentage = ((current_item.votes.where(direction: 'up').count / current_item.votes.count.to_f)*100).round
+
+    respond_to do |format|
+      msg = { percentage: percentage }
+      format.json { render :json => msg }
+    end
   end
 
 end

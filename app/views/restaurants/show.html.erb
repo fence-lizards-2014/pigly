@@ -7,12 +7,8 @@
     <div class="votes">
       <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
       <%= link_to 'Up!', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote'%>
-      <p> <%= item.votes.where(direction: 'up').count %></p>
-
-
+      <p> <%= ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round %>%</p>
       <%= link_to 'Down!', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote'%>
-      <p> <%= item.votes.where(direction: 'down').count %></p>
-
     </div>
   <% end %>
 <% end %>

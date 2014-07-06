@@ -2,21 +2,17 @@
 
 var Vote = {
   init: function() {
-
     $('a#upvote').on('ajax:success', this.changeVotes)
-
+    $('a#downvote').on('ajax:success', this.changeVotes)
   },
 
   changeVotes: function(event, data, status, xhr) {
     event.preventDefault();
-    this.parentNode.querySelector('p').innerHTML = data.upvote_count
+    debugger
+    this.parentNode.querySelector('p').innerHTML = data.percentage + "%"
   }
-
 }
 
-
-
-
-$(document).ready.(function(){
+$(document).ready(function(){
   Vote.init();
 })

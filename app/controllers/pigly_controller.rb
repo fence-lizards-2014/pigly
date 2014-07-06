@@ -1,5 +1,5 @@
 class PiglyController < ApplicationController
-	
+
 	def index
 		# homepage
 		@restaurant = Restaurant.new
@@ -14,4 +14,4 @@ class PiglyController < ApplicationController
 	end
 
 end
-  
+
