@@ -4,7 +4,7 @@ describe Restaurant do
 
   context 'validations' do
 
-    it 'should have valid name, location, latitude and longitude attributes' do
+    it 'has valid name, location, latitude and longitude attributes' do
       restaurant = create(:restaurant)
       expect(restaurant).to be_valid
     end

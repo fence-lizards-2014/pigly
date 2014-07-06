@@ -4,7 +4,7 @@ describe User do
 
   context 'validations' do
 
-    it 'should have valid age, gender and zip attributes' do
+    it 'has valid age, gender and zip attributes' do
       user = create(:user)
       expect(user).to be_valid
     end
