@@ -1,4 +1,7 @@
 $(document).ready(function(){
+  bindEvents();
+
+})
 
   function addEventListener() {
 
@@ -17,5 +20,4 @@ $(document).ready(function(){
 
   addEventListener();
 
-})
 
