@@ -14,6 +14,10 @@ FactoryGirl.define do
     longitude { -122.417908 }
   end
 
+  # This is kind of unhelpful.  Lorem is great for text, but it's hard to
+  # troubleshoot the app without a real food.  Why not harvest something from
+  # http://eatingatoz.com/food-list/.  Make a class "FoodSample.get_food" that
+  # picks a random entry?  Greeked-out text for food is confusing.
   factory :item do
     association :restaurant
     name { Faker::Lorem.word }

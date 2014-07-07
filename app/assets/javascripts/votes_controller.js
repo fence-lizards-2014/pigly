@@ -1,3 +1,6 @@
+// This contains Vote and an on ready.  I think those would belong in a vote.js
+// and initializer.js, respectively.  Methinks you've got a hacky file here.
+//
 // this file is on production
 
 var Vote = {

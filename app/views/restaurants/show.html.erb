@@ -13,9 +13,11 @@
 			    <div class="item-info"><%= item.name %></div>
 			    <div class="votes">
 			      <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
-			      <%= link_to '', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote', class: 'ss-like' %>
+            <!-- Or perhaps using a partial here? -->
+            <!-- Why did you comment out the links?  Seems like that's a useful thing to let me see. -->
+			      <%= link_to '&uarr;'.html_safe, votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote', class: 'ss-like' %>
 			      <span class="vote-holder"> <%= ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round %>%</span>
-			      <%= link_to '', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote', class: 'ss-dislike'%>
+			      <%= link_to '&darr;'.html_safe, votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote', class: 'ss-dislike'%>
 			    </div>
 			  <% end %>
 			<% end %>

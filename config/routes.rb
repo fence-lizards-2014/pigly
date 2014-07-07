@@ -3,6 +3,12 @@ Pigly::Application.routes.draw do
   get "logout", :to => "sessions#destroy", as: "logout"
   resources :users, only: [:show, :new, :edit, :create, :update]
   resources :sessions, only: [:create, :new, :destroy]
+
+
+
+
+  # So this is essentially the heart of the app.
+  # So restaurants/XX/item/yy
   resources :restaurants do
     post 'search', on: :collection, as: "search"
     resources :items do
@@ -10,6 +16,8 @@ Pigly::Application.routes.draw do
   end
 
   resources :votes, only: :create
+
+  # Delete the commented out bullshit.
 
   # get '/search', to: 'pigly#search'
 

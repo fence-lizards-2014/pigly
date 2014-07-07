@@ -1,3 +1,5 @@
+# To what degree is this thing actually being used?  Seems like a shitshow in
+# here.
 class Locu
   include HTTParty
   base_uri 'http://api.locu.com/v1_0'
