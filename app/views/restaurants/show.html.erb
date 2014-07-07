@@ -1,5 +1,6 @@
 <div class="restaurant_container">
 	<h1><%= @restaurant.name %> </h1>
+
 	<div id="tab-container" class="tab-container">
 	  <ul class='tab-bar'>
 	    <li class='tab'><a href="#menu-tab">Menu</a></li>
@@ -12,9 +13,9 @@
 			    <p><%= item.name %></p>
 			    <div class="votes">
 			      <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
-			      <%= link_to 'Up!', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote'%>
+			      <%= link_to '', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote', class: 'ss-like' %>
 			      <span class="vote-holder"> <%= ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round %>%</span>
-			      <%= link_to 'Down!', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote'%>
+			      <%= link_to '', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote', class: 'ss-dislike'%>
 			    </div>
 			  <% end %>
 			<% end %>
@@ -24,6 +25,7 @@
 	    <p>Visualizations here</p>
 	  </div>
 	</div>
+
 </div>
 
 <script type="text/javascript"> 

@@ -8,3 +8,13 @@
 	height: auto;
 }​
 
+/*--- MODIFY CSS BELOW SO BOTH AREN'T NECESSARY*/
+.votes a {
+	text-decoration: none;
+	font-size: large;
+}
+
+.ss-like, .ss-dislike {
+	text-decoration: none;
+	font-size: large;
+}

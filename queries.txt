@@ -1,0 +1,63 @@
+----- MENU ITEMS WITH COUNT OF ALL VOTES -----
+SELECT m.name, COUNT(v.id) AS votes
+FROM items m
+JOIN restaurants r
+	ON r.id = m.restaurant_id
+JOIN votes v
+	ON v.item_id = m.id
+WHERE r.id = 1
+GROUP BY 1
+ORDER BY COUNT(v.id) DESC
+;
+
+--AND v.direction = 'up' 
+
+----- MENU ITEMS WITH COUNT OF VOTE DIRECTION -----
+SELECT DISTINCT(m.name),
+	COUNT(CASE WHEN v.direction = 'up' THEN 'up' END) AS up,
+	COUNT(CASE WHEN v.direction = 'down' THEN 'down' END) AS down,
+	COUNT(v.direction) AS total
+FROM votes v
+JOIN items m
+	ON m.id = v.item_id
+JOIN restaurants r
+	ON r.id = m.restaurant_id
+WHERE r.id = 3
+GROUP BY 1
+ORDER BY 4 DESC
+LIMIT 5
+;
+
+Item.votes.map(&:direction).count
+
+
+SELECT DISTINCT(m.name),
+	COUNT(v.direction) AS total
+FROM votes v
+JOIN items m
+	ON m.id = v.item_id
+JOIN restaurants r
+	ON r.id = m.restaurant_id
+WHERE r.id = 3
+GROUP BY 1
+ORDER BY 4 DESC
+
+
+
+SELECT 
+	COUNT(v.direction)
+FROM votes v
+JOIN items m
+	ON m.id = v.item_id
+JOIN restaurants r
+	ON r.id = m.restaurant_id
+WHERE r.id = 6
+GROUP BY m.name
+ORDER BY 1 DESC
+;
+
+  select("songs.id, OTHER_ATTRS_YOU_NEED, count(listens.id) AS listens_count").
+  joins(:listens).
+  group("songs.id").
+  order("listens_count DESC").
+  limit(5)
