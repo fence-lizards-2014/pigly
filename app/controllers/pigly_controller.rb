@@ -3,6 +3,8 @@ class PiglyController < ApplicationController
 	def index
 		# homepage
 		@restaurant = Restaurant.new
+		@names = []
+		Restaurant.all.each { |restaurant| @names << restaurant.name}
 		# session check in erb
 	end
 

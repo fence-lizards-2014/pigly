@@ -10,7 +10,7 @@
 	    <h2>Menu</h2>
 	    <% @items.each do |item| %>
 			  <%= div_for(item) do %>
-			    <p><%= item.name %></p>
+			    <div class="item-info"><%= item.name %></div>
 			    <div class="votes">
 			      <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
 			      <%= link_to '', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote', class: 'ss-like' %>

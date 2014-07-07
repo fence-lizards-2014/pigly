@@ -30,6 +30,10 @@
   	background: #fff;
   }  
 
+  #menu-tab h2 {
+  	text-align: center;
+  } 
+
 
 	#wrapper {
 		min-height: 100%; 
@@ -52,6 +56,10 @@
 	.restaurant_container {
 		padding-top: 4em;
 	}
+
+	.restaurant_container h1 {
+  	text-align: center;
+  }
 
 	.content {
 		padding-top: 4em;
@@ -90,6 +98,34 @@
 		font-size: 1.1em;
 		text-align: center;
 	}
+
+	.item {
+		display: block;
+	}
+
+	.item .item-info {
+		float: left;
+		margin-left: 20%;
+		text-align: center;
+	}
+
+	.item .votes {
+		text-align: right;
+		margin-right: 20%;
+	}
+
+	.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height: 100px;
+  }
 }
 
 /* Extra Small Devices, Phones */ 

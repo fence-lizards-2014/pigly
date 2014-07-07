@@ -1,5 +1,5 @@
 VotesWidget.View = function() {
-  this.targetPercentageTag = '#positive_votes'
+  this.targetPercentageTag = '.vote-holder'
 }
 
 VotesWidget.View.prototype.changeVotes = function(data, clickedObject) {
