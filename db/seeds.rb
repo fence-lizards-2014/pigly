@@ -10,7 +10,32 @@
 # Item.where(name: nil).destroy_all
 
 # The following is fake data to try out:
-25.times { FactoryGirl.create :user }
-25.times { FactoryGirl.create :restaurant }
-100.times { FactoryGirl.create :item }
-2000.times { FactoryGirl.create :vote }
+25.times do
+  user = User.create!(email: Faker::Internet.email,
+    age: rand(18..90),
+    gender: ["male", "female"].sample,
+    zip: Faker::Address.zip ,
+    password: Faker::Internet.password(8))
+end
+
+25.times do
+  restaurant = Restaurant.create!(name: Faker::Company.name,
+    location: "San Francisco",
+    latitude: 7.749917,
+    longitude: -122.417908)
+end
+
+
+300.times do
+  item = Item.create!(name: Faker::Lorem.word,
+     restaurant_id: rand(1..25))
+end
+
+2000.times do
+  vote = Vote.create!(direction: ["up", "down"].sample,
+       item_id: rand(1..300),
+       user_id: rand(1..25))
+end
+
+
+
