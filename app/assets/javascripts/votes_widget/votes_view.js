@@ -17,6 +17,7 @@ VotesWidget.View.prototype.changeClass = function(clickedObject, classAdjust) {
       clickedObject.classList.remove('ss-symbolicons-block')
       break;
     case "switch":
+
     	clickedObject.parentNode.querySelector('.ss-symbolicons-block').classList.remove('ss-symbolicons-block')
       clickedObject.classList.add('ss-symbolicons-block')
       break;
