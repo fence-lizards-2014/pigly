@@ -39,7 +39,10 @@
 }
 
 .display_text {
-	margin-left: auto;
+	font-size: large;
+	margin-left: 20%;
 	margin-right: auto;
-	color: ;
+	color: #4682b4;
+	font-family: "helvetica";
+	font-weight: bold;
 }

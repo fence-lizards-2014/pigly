@@ -22,13 +22,16 @@
 	  </div>
 	  
 	  <div id="profile-tab">
-	    <h2>Profile</h2>
+	    <p class="display_text">Gender Distribution</p>
 	  	<div class="canvas">
 	  	<div class="femaledisplay"></div>
 	  	<div class="maledisplay"></div>
 	  </div>
-	    <p class="display_text">Patron Age</p>
-	    <div class="display"></div>
+	 	<p class="display_text">Item Force Layout</p>
+	    <div class="itemdisplay"></div>
+	    
+	   <p class="display_text">Patron Age Cluster</p>
+	    <div class="agedisplay"></div>
 	  </div>
 	</div>
 
@@ -39,6 +42,7 @@
 </script>
 
 <script type="text/javascript">
+// ---- GENDER PLOT ----
 
 var femaleData = [10];
 var maleData = [10];
@@ -75,6 +79,51 @@ var male = d3.select(".maledisplay")
 	.append("p")
 	.text(" 50%")
 	.attr("class", "ss-males")
+// --------- ITEM FORCE PLOT --------
+var itemDataSet = {
+	nodes: [
+		{name: "salad"},
+		{name: "steak"},
+		{name: "pasta"},
+		{name: "sandwich"},
+		{name: "fruit salad!"},
+		{name: "burrito"},
+		{name: "peach pie"},
+		{name: "soup"},
+		{name: "coffee cake"},
+		{name: "salmon"}
+	],
+	edges: [
+		{source: 0, target: 1},
+		{source: 0, target: 2},
+		{source: 0, target: 4},
+		{source: 1, target: 3},
+		{source: 1, target: 9},
+		{source: 2, target: 4},
+		{source: 3, target: 4},
+		{source: 3, target: 7},
+		{source: 4, target: 8},
+		{source: 4, target: 5},
+		{source: 5, target: 6},
+		{source: 6, target: 8},
+		{source: 7, target: 8},
+		{source: 7, target: 9},
+		{source: 8, target: 9}
+	]
+};
+// Canvas size
+var forceWidth = 280
+var forceHeight = 280
+// Initialize force layout
+var itemForce = d3.layout 
+									.force()
+									.nodes(itemDataSet.nodes)
+									.links(itemDataSet.edges)
+									.size([forceWidth, forceHeight])
+									.linkDistance([10])
+									.charge([-100])
+									.start();
+
 
 
 
@@ -115,7 +164,7 @@ var force = d3.layout.force()
     .on("tick", tick)
     .start();
 
-var svg = d3.select(".display").append("svg")
+var svg = d3.select(".agedisplay").append("svg")
     .attr("width", width)
     .attr("height", height);
 

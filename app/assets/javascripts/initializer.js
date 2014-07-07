@@ -1,22 +1,29 @@
 $(document).ready(function(){
-  $('#tab-container').easytabs();
+  var controller = new VotesWidget.Controller( new VotesWidget.View);
+  bindEvents(controller);
+});
 
-  function addEventListener() {
 
-    $('a#upvote').on('ajax:success', function(e, data) {
-      var controller = new VotesWidget.Controller( new VotesWidget.View);
-      var clickedObject = this;
-      controller.processVoteClick(controller, data, clickedObject)
-    }),
+function bindEvents(controller) {
 
-    $('a#downvote').on('ajax:success', function(e, data) {
-      var controller = new VotesWidget.Controller( new VotesWidget.View);
-      var clickedObject = this;
-      controller.processVoteClick(controller, data, clickedObject)
-    })
-  };
+  $('a#upvote').on('ajax:success', function(e, data) {
+    var clickedObject = this;
+    controller.processVoteClick(controller, data, clickedObject)
+  }),
 
-  addEventListener();
+  $('a#downvote').on('ajax:success', function(e, data) {
+    var clickedObject = this;
+    controller.processVoteClick(controller, data, clickedObject)
+  })
 
-})
+   $('#tab-container').easytabs();
+};
+
+
+
+
+
+
+
+
 
