@@ -34,7 +34,6 @@
   	text-align: center;
   } 
 
-
 	#wrapper {
 		min-height: 100%; 
 		width:100%;
@@ -149,6 +148,10 @@
    */
   * html .ui-autocomplete {
     height: 100px;
+  }
+
+  a.back_btn {
+  	float: left;
   }
 }
 
