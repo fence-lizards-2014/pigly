@@ -153,6 +153,16 @@
   a.back_btn {
   	float: left;
   }
+
+  #error_explanation {
+  	max-width: 20em;
+  	text-align: left;
+  }
+
+  .flash {
+  	color: red;
+  }
+
 }
 
 /* Extra Small Devices, Phones */ 

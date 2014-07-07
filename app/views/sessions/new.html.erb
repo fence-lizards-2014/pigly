@@ -1,4 +1,7 @@
 <div class='main_search'>
+	<% flash.each do |key, value| %>
+	  <%= content_tag :div, value, class: "flash #{key}" %>
+	<% end %>
 	<%= form_tag(:action => 'create') do %>
 		<%= text_field_tag(:email, nil, placeholder: "Email Address") %><br>
 		<%= password_field_tag :password, nil, placeholder: "Password" %><br>
