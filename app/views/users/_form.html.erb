@@ -1,12 +1,14 @@
 <div class='main_search'>
   <%= form_for(@user) do |f| %>
-    <% if @user.errors.any? %>
+    <% if @user.errors.full_messages.delete_if { |msg| msg =~ /digest/ }.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <h2><%= pluralize(@user.errors.full_messages.delete_if { |msg| msg =~ /digest/ }.count, "error") %> prohibited this user from being saved:</h2>
 
         <ul>
-        <% @user.errors.full_messages.each do |msg| %>
+        <% @user.errors.full_messages.delete_if { |msg| msg =~ /digest/ }.each do |msg| %>
+          <% unless msg == "Password digest can't be blank" %>
           <li><%= msg %></li>
+          <% end %>
         <% end %>
         </ul>
       </div>
