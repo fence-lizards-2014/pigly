@@ -1,5 +1,6 @@
 $(document).ready(function(){
-
+  $('#tab-container').easytabs();
+  
   function addEventListener() {
 
     $('a#upvote').on('ajax:success', function(e, data) {
