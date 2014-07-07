@@ -18,3 +18,28 @@
 	text-decoration: none;
 	font-size: large;
 }
+/*-----------*/
+
+.ss-like {
+	color: green;
+}
+
+.ss-dislike {
+	color: red;
+}
+
+.femaledisplay, .maledisplay {
+	/*margin-left: 20%;
+	margin-right: auto;*/
+}
+
+.ss-females, .ss-males {
+	font-size: xx-large;
+	color: purple;
+}
+
+.display_text {
+	margin-left: auto;
+	margin-right: auto;
+	color: ;
+}
