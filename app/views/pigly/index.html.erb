@@ -12,3 +12,13 @@
 			<%= restaurant_form.text_field :name, :placeholder => "Search For A Restaurant..." %>
 		<% end %> 
 	</div>
+
+<script>
+  $(function() {
+   	var restaurant_names = <%= raw @names %>;
+   	var searchBox = $('#restaurant_name');
+    searchBox.autocomplete({
+      source: restaurant_names
+    });
+  });
+  </script>

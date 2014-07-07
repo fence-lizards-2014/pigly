@@ -4,8 +4,6 @@ VotesWidget.Controller = function(view) {
 
  VotesWidget.Controller.prototype.processVoteClick = function(controller, data, clickedObject) {
   controller.view.changeVotes(data, clickedObject)
-
-
 }
 
 
