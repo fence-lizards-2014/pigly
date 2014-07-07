@@ -89,6 +89,19 @@
 		text-align: center;
 	}
 
+	.main_search form select {
+		border-radius: 10px;
+		height: 3em;
+		width: 20em;
+		font-size: 1em;
+		text-align: center;
+		text-indent: 40%;
+	}
+
+	.main_search form select option {
+		text-align: center;
+	}
+
 	#restaurant_name::-moz-placeholder { 
 		font-size: 1.1em;
 		text-align: center;
