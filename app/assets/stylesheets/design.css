@@ -18,3 +18,11 @@
 	text-decoration: none;
 	font-size: large;
 }
+
+.ss-like {
+	color: green;
+}
+
+.ss-dislike {
+	color: red;
+}
