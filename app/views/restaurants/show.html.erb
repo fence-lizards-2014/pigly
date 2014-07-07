@@ -3,12 +3,12 @@
 	<% @items.each do |item| %>
 
 	  <%= div_for(item) do %>
-	    <p><%= item.name %></p>
+	    <%= item.name %>
 	    <div class="votes">
 	      <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
-	      <%= link_to 'Up!', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote'%>
-	      <p> <%= ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round %>%</p>
-	      <%= link_to 'Down!', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote'%>
+	      <%= link_to '', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote', class: 'ss-like' %>
+	      <p><%= ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round %>%</p>
+	      <%= link_to '', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote', class: 'ss-dislike'%>
 	    </div>
 	  <% end %>
 	<% end %>
