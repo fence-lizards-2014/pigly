@@ -32,7 +32,7 @@ end
 end
 
 2000.times do
-  vote = Vote.create!(direction: ["up", "down"].sample,
+  vote = Vote.create(direction: ["up", "down"].sample,
        item_id: rand(1..300),
        user_id: rand(1..25))
 end
