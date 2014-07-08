@@ -8,9 +8,21 @@
 	  </ul>
 	  <div id="menu-tab">
 	    <h2>Menu</h2>
-	    <% @items.each do |item| %>
-			  <%= div_for(item) do %>
-			    <div class="item-info"><%= item.name %></div>
+	    <% @top_five_items.each do |item| %>
+			  <%= div_for(item, class: "top_five_items") do %>
+			    <div class="item-info" class="item-ellipse"><%= item.name %></div>
+			    <div class="votes">
+			      <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
+			      <%= link_to '', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote', class: 'ss-like' %>
+			      <span class="vote-holder"> <%= ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round %>%</span>
+			      <%= link_to '', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote', class: 'ss-dislike'%>
+			    </div>
+			  <% end %>
+			<% end %>
+			<a class="show_all_items_btn" href="javascript:unhideItems()"><span class="slicknav_menutxt">MORE</span></a>
+			 <% @remaining_items.each do |item| %>
+			  <%= div_for(item, class: "remaining_items") do %>
+			    <div class="item-info" class="item-ellipse"><%= item.name %></div>
 			    <div class="votes">
 			      <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
 			      <%= link_to '', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote', class: 'ss-like' %>
@@ -20,7 +32,7 @@
 			  <% end %>
 			<% end %>
 	  </div>
-	  
+
 	  <div id="profile-tab">
 	    <p class="display_text">Gender Distribution</p>
 	  	<div class="canvas">
@@ -29,7 +41,7 @@
 	  </div>
 	 	<p class="display_text">Item Force Layout</p>
 	    <div class="itemdisplay"></div>
-	    
+
 	   <p class="display_text">Patron Age Cluster</p>
 	    <div class="agedisplay"></div>
 	  </div>

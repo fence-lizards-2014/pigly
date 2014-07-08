@@ -13,6 +13,8 @@ class RestaurantsController < ApplicationController
 	def show
 		@restaurant = Restaurant.find(params[:id])
 		@items = @restaurant.items.sort_by! { |item| ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round }.reverse
+		@top_five_items = @items.shift(5)
+		@remaining_items = @items
 		# render view restaurants/.id.html.erb
 		# lists top 5 menu items with content
 				#add logic to list top 5 based on highest votes
