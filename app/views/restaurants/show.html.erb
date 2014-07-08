@@ -20,9 +20,25 @@
 			  <% end %>
 			<% end %>
 	  </div>
+	  
 	  <div id="profile-tab">
-	    <h2>Profile</h2>
-	    <p>Visualizations here</p>
+	    <p class="display_text">Gender Distribution</p>
+	  	<div class="canvas">
+	  	<div class="femaledisplay"></div>
+	  	<div class="maledisplay"></div>
+	  </div>
+	 	<p class="display_text">Item Force Layout</p>
+	    <div class="itemdisplay"></div>
+	    
+	   <p class="display_text">Patron Age Cluster</p>
+	    <div class="agedisplay"></div>
 	  </div>
 	</div>
+
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){ $('#tab-container').easytabs(); });
+</script>
+
+
