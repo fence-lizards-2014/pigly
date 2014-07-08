@@ -128,15 +128,17 @@
 
 	.item .item-info {
 		display: inline-block;
-		margin-left: 10%;
 		text-align: center;
 		font-size: 1.4em;
-		max-width: 35%;
+		max-width: 45%;
     margin-top: 0.2em;
     margin-bottom: 0.2em;
     text-overflow: ellipsis;
     white-space: pre;
     overflow: hidden;
+    /*overflow-x: scroll;
+    white-space: pre;
+    word-wrap: initial;*/
     width: 10em;
 	}
 
@@ -206,6 +208,20 @@
   #front-page-notice {
   	margin-top: 1em;
   	color: green;
+  }
+
+  #info-tab {
+  	font-size: 1em;
+  	margin-top: 1em;
+  }
+
+  #map-canvas { 
+  	position: relative;
+  	margin-top: 1em;
+  	height: 20em;
+  	width: 20em;
+  	margin-right: auto;
+  	margin-left: auto;
   }
 
 }

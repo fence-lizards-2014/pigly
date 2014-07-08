@@ -15,8 +15,4 @@ class Locu
   def menu venue_id
     self.class.get("/venue/#{venue_id}/?api_key=#{@app_key}")
   end
-
-  def populate_menu
-
-  end
 end
