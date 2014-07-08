@@ -10,7 +10,6 @@
 	}
 
 
-
 	.tab-bar {
 		margin: 0;
 		padding: 0;
@@ -42,12 +41,10 @@
 		display: table;
 	}
 
-	#demo1 {
+
+	#nav-menu {
 		position:fixed;
 		width: 100%;
-		/*
-		top: 0;
-		right: 0;*/
 	}
 
 	#menu {
@@ -204,6 +201,11 @@
 
   .flash {
   	color: red;
+  }
+
+  #front-page-notice {
+  	margin-top: 1em;
+  	color: green;
   }
 
 }

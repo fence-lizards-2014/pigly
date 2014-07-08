@@ -4,8 +4,20 @@ VotesWidget.View = function() {
 
 VotesWidget.View.prototype.changeVotes = function(data, clickedObject) {
   var target = this.targetPercentageTag;
-  clickedObject.parentNode.querySelector(target).innerHTML = data.percentage + "%"
-  this.changeClass(clickedObject, data.class_adjust)
+  if (data.guest) {
+    $('.notifyjs-wrapper').trigger('notify-hide');
+    // $.notify(
+    //   "You must sign in to vote",
+    //   {position:"bcenter"}
+    // );
+    $(clickedObject).notify(
+      "Sign in to vote",
+      {position:"left"}
+    );
+  } else {
+    clickedObject.parentNode.querySelector(target).innerHTML = data.percentage + "%"
+    this.changeClass(clickedObject, data.class_adjust)
+  };
 }
 
 VotesWidget.View.prototype.changeClass = function(clickedObject, classAdjust) {
