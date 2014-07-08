@@ -1,17 +1,14 @@
-	<% if logged_in? %>
-		<%= link_to 'Sign Out', logout_path %>
-	<% else %>
-		<%= link_to 'Sign Up', new_user_path %>
-		<%= link_to 'Sign In', new_session_path %>
+<div class='main_search'>
+	<div><%= image_tag "Pigly-logo.png", :class => "main_logo" %></div>
+	</br>
+	<%= form_for @restaurant, url: search_restaurants_path do |restaurant_form| %>
+		<%= restaurant_form.text_field :name, :placeholder => "Search For A Restaurant..." %>
 	<% end %>
+	<% if flash[:notice] %>
+		<div id="front-page-notice"><%= flash[:notice] %></div>
+	<% end %>
+</div>
 
-	<div class='main_search'>
-		<div><%= image_tag "Pigly-logo.png", :class => "main_logo" %></div>
-		</br>
-		<%= form_for @restaurant, url: search_restaurants_path do |restaurant_form| %>
-			<%= restaurant_form.text_field :name, :placeholder => "Search For A Restaurant..." %>
-		<% end %>
-	</div>
 
 
 <script>
