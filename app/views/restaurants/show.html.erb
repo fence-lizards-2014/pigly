@@ -3,9 +3,9 @@
 
 	<div id="tab-container" class="tab-container">
 	  <ul class='tab-bar' style="display:none;">
-	    <li class='tab'><a href="#menu-tab">Menu</a></li>
-	    <li class='tab'><a href="#visualize-tab">Visualize</a></li>
-	    <li class='tab'><a href="#info-tab">Info</a></li>
+	    <li class='tab'><a href="#menu-tab"></a></li>
+	    <li class='tab'><a href="#visualize-tab"></a></li>
+	    <li class='tab'><a href="#info-tab"></a></li>
 	  </ul>
 	  <div id="menu-tab">
 	    <h2>Menu</h2>
@@ -57,7 +57,6 @@
 </div>
 
 <script type="text/javascript">
-  $(document).ready(function(){ $('#tab-container').easytabs(); });
   function initialize() {
   	var myLatlng = new google.maps.LatLng(<%= @restaurant.latitude %>,<%= @restaurant.longitude %>);
     var mapOptions = {

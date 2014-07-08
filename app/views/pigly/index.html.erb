@@ -12,8 +12,9 @@
 
 
 <script>
-  
-
+  $(document).ready(function() {
+    $('.tab').hide();
+  });
   $(function() {
    	var restaurant_names = <%= raw @names %>;
    	var searchBox = $('#restaurant_name');
