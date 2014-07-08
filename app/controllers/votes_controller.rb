@@ -2,7 +2,6 @@ class VotesController < ApplicationController
 
 	def create
     if !logged_in?
-      p "WE SHOULD BE SEEING THIS"
       respond_to do |format|
         msg = { guest: "guest" }
         format.json { render :json => msg }

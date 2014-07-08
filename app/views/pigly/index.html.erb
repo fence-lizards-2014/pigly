@@ -12,6 +12,9 @@
 
 
 <script>
+  $(document).ready(function() {
+    $('.tab').hide();
+  });
   $(function() {
    	var restaurant_names = <%= raw @names %>;
    	var searchBox = $('#restaurant_name');
@@ -19,7 +22,9 @@
       source: restaurant_names,
 
       select: function(e, ui) {
-      	$(e.target).val(event.target.innerHTML);
+        if (event.type == 'click') {
+      	 $(e.target).val(event.target.innerHTML); 
+        }
         $(e.target).parents("form").submit();
       }
     });
