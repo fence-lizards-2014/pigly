@@ -152,7 +152,6 @@
 
 
 	.item .votes {
-		position: relative;
 		display: table-cell;
 		float: right;
 		vertical-align: middle;
