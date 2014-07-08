@@ -163,6 +163,11 @@
   	color: red;
   }
 
+  #front-page-notice {
+  	margin-top: 1em;
+  	color: green;
+  }
+
 }
 
 /* Extra Small Devices, Phones */ 
