@@ -19,7 +19,11 @@
    	var restaurant_names = <%= raw @names %>;
    	var searchBox = $('#restaurant_name');
     searchBox.autocomplete({
-      source: restaurant_names
+      source: restaurant_names,
+
+      select: function(e, ui) {
+        $(e.target).parents("form").submit();
+      }
     });
   });
  </script>
