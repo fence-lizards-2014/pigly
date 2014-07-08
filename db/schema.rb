@@ -11,45 +11,45 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140705164017) do
+ActiveRecord::Schema.define(:version => 20140705033942) do
 
   create_table "items", :force => true do |t|
     t.integer  "restaurant_id"
-    t.string   "name"
+    t.string   "name",          :null => false
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
   create_table "restaurants", :force => true do |t|
-    t.string   "name"
-    t.string   "location"
-    t.string   "latitude"
-    t.string   "longitude"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "address"
-    t.string   "phone"
-    t.string   "postal_code"
-    t.string   "website"
+    t.string   "name",        :limit => 48,  :null => false
+    t.string   "location",    :limit => 48
+    t.string   "address",     :limit => 64
+    t.string   "postal_code", :limit => 10
+    t.string   "latitude",    :limit => 12
+    t.string   "longitude",   :limit => 12
+    t.string   "phone",       :limit => 24
+    t.string   "website",     :limit => 128
     t.string   "locu_id"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.string   "gender"
-    t.integer  "age"
-    t.string   "zip"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "gender",          :limit => 6,  :null => false
+    t.integer  "age",                           :null => false
+    t.string   "zip",             :limit => 10, :null => false
+    t.string   "email",           :limit => 48, :null => false
+    t.string   "password_digest",               :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "votes", :force => true do |t|
-    t.string   "direction"
+    t.string   "direction",  :limit => 4
     t.integer  "item_id"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
 end
