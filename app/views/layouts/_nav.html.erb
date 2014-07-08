@@ -1,4 +1,4 @@
-<div id="demo1"></div>
+<div id="nav-menu"></div>
 	<ul id="menu">
 	<% if logged_in? %>
 		<li><a class="scroll" href="#">Your Profile</a></li>
@@ -12,7 +12,7 @@
 <script>
 	$(function(){
 		$('#menu').slicknav({
-			prependTo:'#demo1'
+			prependTo:'#nav-menu'
 		});
 	});
 </script>
