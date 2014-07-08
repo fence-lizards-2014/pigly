@@ -14,7 +14,7 @@
 			    <div class="votes">
 			      <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
 			      <%= link_to '', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote', class: 'ss-like' %>
-			      <span class="vote-holder"> <%= ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round %>%</span>
+			      <span class="vote-holder"> <%= item.calculate_percentage %>%</span>
 			      <%= link_to '', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote', class: 'ss-dislike'%>
 			    </div>
 			  <% end %>
@@ -26,7 +26,7 @@
 			    <div class="votes">
 			      <!-- CLEAN THIS SEND LOGIC TO CONTROLER -->
 			      <%= link_to '', votes_path(direction: 'up', item_id: item.id), remote: true, method: 'post', id: 'upvote', class: 'ss-like' %>
-			      <span class="vote-holder"> <%= ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round %>%</span>
+			      <span class="vote-holder"> <%= item.calculate_percentage %>%</span>
 			      <%= link_to '', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote', class: 'ss-dislike'%>
 			    </div>
 			  <% end %>

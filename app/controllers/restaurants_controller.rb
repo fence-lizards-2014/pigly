@@ -12,7 +12,7 @@ class RestaurantsController < ApplicationController
 
 	def show
 		@restaurant = Restaurant.find(params[:id])
-		@items = @restaurant.items.sort_by! { |item| ((item.votes.where(direction: 'up').count / item.votes.count.to_f)*100).round }.reverse
+		@items = sort_by_percent(@restaurant)
 		@top_five_items = @items.shift(5)
 		@remaining_items = @items
 		# render view restaurants/.id.html.erb
@@ -37,6 +37,12 @@ class RestaurantsController < ApplicationController
 	end
 
 	private
+
+	def sort_by_percent(restaurant)
+		@voted_items = restaurant.items.select {|item| item.votes.count > 0}
+		@unvoted_items = restaurant.items.select {|item| item.votes.count == 0}
+		@voted_items.sort_by! { |item| item.calculate_percentage }.reverse + @unvoted_items
+	end
 
 	def restaurant_params
 		params.require(:restaurant).permit(:name, :location, :latitude, :longitude, :address, :phone, :postal_code, :website, :locu_id, items: [ :name ])
