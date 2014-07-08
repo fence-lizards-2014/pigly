@@ -2,9 +2,10 @@
 	<h1><%= @restaurant.name %> </h1>
 
 	<div id="tab-container" class="tab-container">
-	  <ul class='tab-bar'>
+	  <ul class='tab-bar' style="display:none;">
 	    <li class='tab'><a href="#menu-tab">Menu</a></li>
-	    <li class='tab'><a href="#profile-tab">Profile</a></li>
+	    <li class='tab'><a href="#visualize-tab">Visualize</a></li>
+	    <li class='tab'><a href="#info-tab">Info</a></li>
 	  </ul>
 	  <div id="menu-tab">
 	    <h2>Menu</h2>
@@ -33,17 +34,23 @@
 			<% end %>
 	  </div>
 
-	  <div id="profile-tab">
+	  <div id="visualize-tab">
 	    <p class="display_text">Gender Distribution</p>
 	  	<div class="canvas">
-	  	<div class="femaledisplay"></div>
-	  	<div class="maledisplay"></div>
-	  </div>
-	 	<p class="display_text">Item Force Layout</p>
+		  	<div class="femaledisplay"></div>
+		  	<div class="maledisplay"></div>
+		  </div>
+	 		<p class="display_text">Item Force Layout</p>
 	    <div class="itemdisplay"></div>
-
-	   <p class="display_text">Patron Age Cluster</p>
+	   	<p class="display_text">Patron Age Cluster</p>
 	    <div class="agedisplay"></div>
+	  </div>
+
+	  <div id="info-tab">
+	  	<p>Address: <%= @restaurant.address %></p>
+	  	<p>Website: <%= @restaurant.website %></p>
+	  	<p>Phone Number: <%= @restaurant.phone %></p>
+	  	<div id="map-canvas"/>
 	  </div>
 	</div>
 
@@ -51,6 +58,23 @@
 
 <script type="text/javascript">
   $(document).ready(function(){ $('#tab-container').easytabs(); });
+  function initialize() {
+  	var myLatlng = new google.maps.LatLng(<%= @restaurant.latitude %>,<%= @restaurant.longitude %>);
+    var mapOptions = {
+      center: myLatlng,
+      zoom: 16,
+      panControl: false,
+      zoomControl: false,
+      streetViewControl: false,
+      mapTypeControl: false
+    };
+    var map = new google.maps.Map(document.getElementById("map-canvas"),
+        mapOptions);
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Hello World!'
+  });
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-
-
