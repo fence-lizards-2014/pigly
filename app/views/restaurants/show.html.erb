@@ -35,16 +35,20 @@
 	  </div>
 
 	  <div id="visualize-tab">
-
       <p class="display_text">Patron Age Cluster</p>
       <div class="agedisplay">
         <div class="infobox">
           <p id="data-info"></p>
+
         </div>
       </div>
 
       <p class="display_text">Item Force Layout</p>
-      <div class="itemdisplay"></div>
+      <div class="itemdisplay">
+        <div class="itembox">
+          <p id="item-info"></p>
+        </div>
+        </div>
 
 
 	    <p class="display_text">Gender Distribution</p>
@@ -86,6 +90,7 @@
 </script>
 
 <script type="text/javascript">
+
 // ----- BUBBLE PLOT -----
 // infobox code
 // this will be ran whenever we mouse over a circle
@@ -231,28 +236,41 @@ function collide(alpha) {
 }
 
 // --------- ITEM FORCE PLOT --------
+// description display on mouseover
+var nodeMouseOver = function() {
+  var itemNode = d3.select(this);
+  d3.select(".itembox")
+    .style("display", "block");
+  d3.select("#item-info")
+    .text("" + this.__data__.item + " has " + this.__data__.val + " total votes, with " + Math.round(((this.__data__.pos) / (this.__data__.val)) * 100) + "% positive.");
+}
+// description display removed
+var nodeMouseOut = function() {
+  var itemNode = d3.select(this);
+  d3.select(".itembox").style("display", "none");
+}
+// raw data
 var rawEdges = <%= raw @visedges %>
-
+// data manipulation
 rawEdges.forEach(function(d){
   d.source = +d.source;
   d.target = +d.target;
 });
-
-
+// dataset for visual
 var itemDataSet = {
   nodes: <%= raw @visnodes %>,
   edges: rawEdges
 };
-// Canvas size
+// canvas size
 var itemWidth = 280
-var itemHeight = 220
-
+var itemHeight = 375
+// color design
 var itemColor = d3.scale.category20b();
-
+// create canvas
 var itemSvg = d3.select(".itemdisplay").append("svg")
     .attr("width", itemWidth)
     .attr("height", itemHeight);
-
+// create force layout
 var itemForce = d3.layout
                   .force()
                   .nodes(itemDataSet.nodes)
@@ -261,26 +279,25 @@ var itemForce = d3.layout
                   .linkDistance([70])
                   .charge([-400])
                   .start();
-// Define edges
+// define edges
 var itemEdges = itemSvg.selectAll("line")
                 .data(itemDataSet.edges)
                 .enter()
                 .append("line")
                 .style("stroke", "#ffff00")
                 .style("stroke-width", 1);
-// Define nodes
-
+// define nodes
 var itemNodes = itemSvg.selectAll("circle")
                 .data(itemDataSet.nodes)
                 .enter()
                 .append("circle")
                 .attr("r", function(d){ return d.val * 2;})
-                // .on("mouseover", itemMouseOverFunction)
-                // .on("mouseout", itemMouseOutFunction)
+                .on("mouseover", nodeMouseOver)
+                .on("mouseout", nodeMouseOut)
                 .style("fill", function(d) { return itemColor((d.pos / d.val) * 100); })
                 .text(function(d) {return d.item})
                 .call(itemForce.drag);
-
+// connect nodes with edges
 itemForce.on("tick", function() {
 
   itemEdges.attr("x1", function(d) { return d.source.x; })
@@ -291,24 +308,6 @@ itemForce.on("tick", function() {
   itemNodes.attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
 });
-
-// // -----  Adding in after all visuals work together -----
-// // var itemMouseOverFunction = function() {
-// //   var itemNode = d3.select(this);
-// //   // show infobox div on mouseover.
-// //   // block means sorta "render on the page" whereas none would mean "don't render at all"
-// //   d3.select(".item_description").style("display", "block");
-// //   // add test to p tag in infobox
-// //   d3.select("#item_info")
-// //    .text("" + this.__data__.item + " has " + this.__data__.val + " votes. " + (this.__data__.pos / this.__data__.val) * 100 + "%  of votes are positive.");
-// // }
-
-// // var itemMouseOutFunction = function() {
-// //   var itemCircle = d3.select(this);
-// //   // display none removes element totally, whereas visibilty in last example just hid it
-// //   d3.select(".item_description").style("display", "none");
-// // }
-
 // ---------- GENDER VISUALIZATION ----------
 var circleData = [
   { "cx": 20, "cy": 20, "radius": 20, "color" : "green" },
