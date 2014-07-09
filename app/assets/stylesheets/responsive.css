@@ -69,6 +69,8 @@
 	}
 
 	.friends_container div {
+		display: block;
+		margin-bottom: 0.1em;
 		border-bottom: 1px solid black;
 		font-size: 0.4em;
 	}
@@ -79,6 +81,7 @@
 		float: left;
 		margin-left: 1em;
 		margin-right: 0.5em;
+		margin-bottom: 0.5em;
 	}
 
 	.restaurant_container h1 {

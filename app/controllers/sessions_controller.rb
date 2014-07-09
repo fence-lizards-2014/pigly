@@ -22,28 +22,24 @@ class SessionsController < ApplicationController
 	end
 
 	def facebook
-		returned_key = HTTParty.get("https://graph.facebook.com/oauth/access_token?client_id=#{FACEBOOK_CLIENT}&redirect_uri=http://local.foo.com:3000/facebook&client_secret=#{FACEBOOK_SECRET}&code=#{params[:code]}")
-		auth_token = /=(.+)&/.match(returned_key)[1]
-		info = JSON.parse(HTTParty.get("https://graph.facebook.com/me?access_token=#{auth_token}"))
-		name = info["name"]
-		email = info["email"]
-		facebook_id = info["id"]
-		photo = JSON.parse(HTTParty.get("https://graph.facebook.com/me/picture?redirect=0&fields=url&access_token=#{auth_token}"))["data"]["url"]
-		if User.find_by_facebook_id(facebook_id)
-			session[:user_id] = User.find_by_facebook_id(facebook_id).id
+		auth_token = Facebook.get_token(params[:code])
+		user_info = Facebook.get_user_info(auth_token)
+		photo = Facebook.get_user_photo_url(auth_token)
+		if User.find_by_facebook_id(user_info["id"])
+			User.find_by_facebook_id(user_info["id"]).update_attributes(facebook_token: auth_token)
+			session[:user_id] = User.find_by_facebook_id(user_info["id"]).id
 		else
-			@user = User.create(email: email, facebook_name: name, facebook_token: auth_token, password: SecureRandom.hex, zip: "94114", gender: "male", age: 20, facebook_photo_url: photo, facebook_id: facebook_id)
+			@user = User.create(email: user_info["email"], facebook_name: user_info["name"], facebook_token: auth_token, password: SecureRandom.hex, zip: "94114", gender: "male", age: 20, facebook_photo_url: photo, facebook_id: user_info["id"])
 			session[:user_id] = @user.id
 		end
 		redirect_to root_path, notice: "Successfully signed in with Facebook."
 	end
 
 	def friends
-		votes = []
-		friends = JSON.parse(HTTParty.get("https://graph.facebook.com/me/friends?access_token=#{current_user.facebook_token}"))["data"]
+		friends = Facebook.get_user_friends(current_user.facebook_token)
 		id_list = friends.map{ |friend| friend["id"] }
-		id_list.each{ |id| votes << User.find_by_facebook_id(id).votes if !User.find_by_facebook_id(id).nil? }
-		@sorted_votes = votes.flatten!.sort_by{ |vote| vote.updated_at }.reverse!
+		votes = id_list.map!{ |id| User.find_by_facebook_id(id).votes if !User.find_by_facebook_id(id).nil? }
+		@sorted_votes = votes.delete_if{ |vote| vote == nil }.flatten!.sort_by{ |vote| vote.updated_at }.reverse!
 	end
 
 end
