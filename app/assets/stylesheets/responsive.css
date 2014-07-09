@@ -35,7 +35,8 @@
 
 
   #menu-tab {
-  	background: #fff;
+    border-radius: .5em;
+  	background: #fff5ee;
     font-size: 1em;
   }
 
@@ -243,7 +244,7 @@
   	margin-top: 1em;
   }
 
-  #map-canvas { 
+  #map-canvas {
   	position: relative;
   	margin-top: 1em;
   	height: 20em;
