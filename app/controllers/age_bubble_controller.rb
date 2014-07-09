@@ -1,26 +1,22 @@
 class AgeBubbleController < ApplicationController
   attr_accessor :restaurant_id
-  def self.get_items(restaurant_id)
-    restaurant_votes = Item.where(restaurant_id: restaurant_id).map(&:votes).flatten
+  def initialize(restaurant_id)
+    @restaurant_votes = Item.where(restaurant_id: restaurant_id).map(&:votes).flatten
   end
 
-  def self.user(user_id)
+  def get_nodes_for_restaurant_id
+    add_group_totals_to_nodes
+  end
+
+  private
+  def user(user_id)
     return User.find(user_id)
   end
 
-  def self.get_user_age(restaurant_id)
-    age_hash = {}
-    get_items(restaurant_id).each do |vote|
-      age = user(vote.user_id).age
-      age_hash[age] = {age: age}
-    end
-    return age_hash
-  end
-
-  def self.positive_votes_per_user_by_age(restaurant_id)
+  def positive_votes_per_user_by_age
     positive_votes_count = 0
     positive_votes_hash = {}
-    get_items(restaurant_id).each do |vote|
+    @restaurant_votes.each do |vote|
       age = user(vote.user_id).age
       if vote.direction == 'up'
         positive_votes_count += 1
@@ -30,8 +26,8 @@ class AgeBubbleController < ApplicationController
     return positive_votes_hash
   end
 
-  def self.get_group(restaurant_id)
-    group_hash = positive_votes_per_user_by_age(restaurant_id)
+  def create_nodes
+    group_hash = positive_votes_per_user_by_age
     group_hash.each_key do |age|
       case age
       when 18..30
@@ -51,21 +47,20 @@ class AgeBubbleController < ApplicationController
        group = "61 - :)"
       end
 
-      total_positive_votes = positive_votes_per_user_by_age(restaurant_id)[age][:total_positive_votes]
+      total_positive_votes = positive_votes_per_user_by_age[age][:total_positive_votes]
       group_hash[age] = {group_num: group_num, group: group, total_positive_votes: total_positive_votes, age: age}
     end
 
     group_hash
   end
 
-  def self.get_group_totals(restaurant_id)
+  def add_group_totals_to_nodes
     totals = Hash.new(0)
-    get_group_hash = get_group(restaurant_id)
-    get_group_hash.each do |age, node|
+    create_nodes.each do |age, node|
       totals[node[:group_num]] += node[:total_positive_votes]
     end
-    totals
 
+    get_group_hash = create_nodes
     get_group_hash.each do |age, node|
       i = 0
       while i <= 4
@@ -75,5 +70,4 @@ class AgeBubbleController < ApplicationController
    end
    return get_group_hash.values
   end
-
 end
