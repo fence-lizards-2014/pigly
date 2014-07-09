@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140705033942) do
+ActiveRecord::Schema.define(:version => 20140709015325) do
 
   create_table "items", :force => true do |t|
     t.integer  "restaurant_id"
@@ -35,13 +35,17 @@ ActiveRecord::Schema.define(:version => 20140705033942) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "gender",          :limit => 6,  :null => false
-    t.integer  "age",                           :null => false
-    t.string   "zip",             :limit => 10, :null => false
-    t.string   "email",           :limit => 48, :null => false
-    t.string   "password_digest",               :null => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.string   "gender",             :limit => 6,  :null => false
+    t.integer  "age",                              :null => false
+    t.string   "zip",                :limit => 10, :null => false
+    t.string   "email",              :limit => 48, :null => false
+    t.string   "password_digest",                  :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "facebook_id"
+    t.string   "facebook_photo_url"
+    t.string   "facebook_token"
+    t.string   "facebook_name"
   end
 
   create_table "votes", :force => true do |t|

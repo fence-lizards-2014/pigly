@@ -1,7 +1,10 @@
 <div class='main_search'>
+	<p>To see what your friends like:</p>
+	<%= link_to image_tag("login_with_facebook.png", :border => 0, :class => 'fb-button'), "https://www.facebook.com/dialog/oauth?client_id=1476091199299474&scope=email,user_friends&redirect_uri=http://local.foo.com:3000/facebook" %>
 	<% flash.each do |key, value| %>
 	  <%= content_tag :div, value, class: "flash #{key}" %>
 	<% end %>
+	<p>Or log in with email:</p>
 	<%= form_tag(:action => 'create') do %>
 		<%= text_field_tag(:email, nil, placeholder: "Email Address") %><br>
 		<%= password_field_tag :password, nil, placeholder: "Password" %><br>

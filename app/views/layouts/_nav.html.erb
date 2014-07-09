@@ -1,7 +1,9 @@
 <div id="nav-menu"></div>
 	<ul id="menu">
 	<% if logged_in? %>
-		<li><a class="scroll" href="#">Your Profile</a></li>
+		<% if facebook_user? %>
+			<li><a class="scroll" href="/friends">Friends Feed</a></li>
+		<% end %>
 		<li><a class="scroll" href="/logout">Sign Out</a></li>
 	<% else %>
 		<li><a class="scroll" href="/sessions/new">Sign In</a></li>
