@@ -15,6 +15,9 @@ class RestaurantsController < ApplicationController
 		@items = sort_by_percent(@restaurant)
 		@top_five_items = @items.shift(5)
 		@remaining_items = @items
+		@nodes_for_bubbles = AgeBubbleController.get_group_totals(params[:id]).to_json
+		@visnodes = QueryController.item_nodes(@restaurant).nodes_to_json
+		@visedges = QueryController.item_edges(@restaurant).edges_to_json
 		# render view restaurants/.id.html.erb
 		# lists top 5 menu items with content
 				#add logic to list top 5 based on highest votes
