@@ -5,7 +5,7 @@ class Locu
   LOCU_API_QUERY_ENDPOINT = "/venue/search/?has_menu=true&category=restaurant&locality=san+francisco&api_key="
 
   def initialize
-    @app_key = LOCU_API_KEY
+    @app_key = ENV['LOCU_API_KEY']
   end
 
   def restaurants
