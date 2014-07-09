@@ -87,7 +87,8 @@
 
 	.restaurant_container h1 {
   	text-align: center;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    line-height: 1em
   }
 
 	.content {
@@ -159,26 +160,15 @@
 	.item .item-info {
 		display: inline-block;
 		text-align: center;
-		font-size: 1.4em;
+		font-size: 1.3em;
 		max-width: 45%;
     margin-top: 0.2em;
     margin-bottom: 0.2em;
     text-overflow: ellipsis;
     white-space: pre;
     overflow: hidden;
-    /*overflow-x: scroll;
-    white-space: pre;
-    word-wrap: initial;*/
     width: 10em;
 	}
-
-
-  .item .item-ellipse {
-    text-overflow: ellipsis;
-    white-space: pre;
-    overflow: hidden;
-    width: 12em;
-  }
 
 
 	.item .votes {
@@ -189,6 +179,9 @@
 		margin-right: 15%;
 	}
 
+.open-text-box {
+  display: none;
+}
 
 	.vote-holder {
 		font-size: 1.4em;

@@ -17,6 +17,17 @@ function bindEvents(controller) {
   })
 
    $('#tab-container').easytabs();
+
+
+   $('.item-info').on("click", function(){
+     var fullText = this.nextElementSibling
+     if (fullText.style["display"] === "none") {
+        fullText.style["display"] = "block";
+     }
+     else {
+        fullText.style["display"] = "none";
+    }
+   });
 };
 
 
