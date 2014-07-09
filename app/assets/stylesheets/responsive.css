@@ -9,6 +9,34 @@
   background-color: #fff5ee;
 	}
 
+  input[type="email"], textarea {
+  background-color: #fff5ee;
+  }
+
+  input[type="password"], textarea {
+  background-color: #fff5ee;
+  }
+
+  .main_search a:hover {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  text-decoration: none;
+  }
+
+  #user_gender {
+    background-color: #fff5ee;
+  }
+
+  .user_submit_button input {
+    background-color: #fff5ee;
+  }
+
+  .new_user_submit_button textarea {
+    color: #fff5ee;
+  }
+
 	.fb-button {
 		width: 20em;
 	}
@@ -132,6 +160,10 @@
 		text-align: center;
 	}
 
+  .main_search p {
+    color: #fff5ee;
+  }
+
 	#restaurant_name::-moz-placeholder {
 		font-size: 1.1em;
 		text-align: center;
@@ -160,7 +192,7 @@
 	.item .item-info {
 		display: inline-block;
 		text-align: center;
-		font-size: 1.3em;
+		font-size: 1.2em;
 		max-width: 45%;
     margin-top: 0.2em;
     margin-bottom: 0.2em;
@@ -229,7 +261,7 @@
 
   #front-page-notice {
   	margin-top: 1em;
-  	color: green;
+  	color: #fff5ee;
   }
 
   #info-tab {

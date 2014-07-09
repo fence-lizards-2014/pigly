@@ -1,4 +1,5 @@
 <div class='main_search'>
+<p>Please fill out the form below to sign up!</p>
   <%= form_for(@user) do |f| %>
 
     <% if @user.errors.full_messages.delete_if { |msg| msg =~ /digest/ }.any? %>
