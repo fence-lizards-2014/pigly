@@ -56,3 +56,14 @@
 .agedisplay {
 	margin: 0 auto;
 }
+
+.itembox {
+				margin: 0 auto;
+				display: none;
+        position: absolute;
+        width: 280px;
+        background-color: rgba(255,255,255,.75);
+}
+.itemdisplay {
+	margin: 0 auto;
+}
