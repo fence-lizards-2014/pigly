@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  attr_accessible :age, :email, :gender, :password, :password_confirmation, :zip
+  attr_accessible :age, :email, :gender, :password, :password_confirmation, :zip, :facebook_photo_url, :facebook_id, :facebook_token, :facebook_name
 
   has_many :votes
   accepts_nested_attributes_for :votes

@@ -1,0 +1,17 @@
+<div class="friends_container">
+	<% @sorted_votes.each do |vote| %>
+		<% user = User.find(vote.user_id) %>
+		<% item = Item.find(vote.item_id) %>
+		<% restaurant = Restaurant.find(item.restaurant_id) %>
+		<div>
+			<%= image_tag(user.facebook_photo_url, class: "facebook_photo") %>
+			<p><%= user.facebook_name + " " + vote.liked? + " " + item.name + " from " + restaurant.name + " (at " + vote.updated_at.to_s + ")" %></p>
+		</div>
+	<% end %>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('.tab').hide();
+  });
+</script>

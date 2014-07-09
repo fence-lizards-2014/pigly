@@ -9,6 +9,9 @@
   background-color: #fff5ee;
 	}
 
+	.fb-button {
+		width: 20em;
+	}
 
 	.tab-bar {
 		margin: 0;
@@ -59,6 +62,23 @@
 
 	.restaurant_container {
 		padding-top: 4em;
+	}
+
+	.friends_container {
+		padding-top: 4em;
+	}
+
+	.friends_container div {
+		border-bottom: 1px solid black;
+		font-size: 0.4em;
+	}
+
+	.facebook_photo {
+		border: 1px solid black;
+		border-radius: 50%;
+		float: left;
+		margin-left: 1em;
+		margin-right: 0.5em;
 	}
 
 	.restaurant_container h1 {
