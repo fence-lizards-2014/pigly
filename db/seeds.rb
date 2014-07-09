@@ -44,7 +44,7 @@ end
 
 
 300.times do
-  item = Item.create!(name: Faker::Lorem.word,
+  item = Item.create!(name: Faker::Lorem.sentence,
      restaurant_id: rand(2..25))
 end
 

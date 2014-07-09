@@ -7,11 +7,6 @@ describe UsersController do
 
   context 'create user' do
 
-    it 'assigns the requested user to @user' do
-      get :show, id: @user
-      expect(assigns(:user)).to eq(@user)
-    end
-
      it 'redirects to the root path upon save' do
       post :create, user: attributes_for(:user)
       expect(response).to redirect_to root_url

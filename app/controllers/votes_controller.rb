@@ -1,46 +1,21 @@
 class VotesController < ApplicationController
 
 	def create
+    # First, check if user is signed in. If user is a guest, the client 
+    # will alert them to log in before attempting to vote.
     if !logged_in?
       respond_to do |format|
         msg = { guest: "guest" }
         format.json { render :json => msg }
       end
     else
-      if user_has_voted_on_item? && directions_match?
-        current_user.votes.find_by_item_id(params[:item_id]).destroy
-        class_adjust = 'destroy'
-      elsif user_has_voted_on_item? && !directions_match?
-        current_user.votes.find_by_item_id(params[:item_id]).destroy
-        vote = Vote.new(item_id: params[:item_id], user_id: current_user.id, direction: params[:direction])
-        vote.save
-        class_adjust = 'switch'
-      elsif !user_has_voted_on_item?
-        vote = Vote.new(item_id: params[:item_id], user_id: current_user.id, direction: params[:direction])
-        vote.save
-        class_adjust = 'new'
-      end
-
-      current_item = Item.find(params[:item_id])
-      percentage = ((current_item.votes.where(direction: 'up').count / current_item.votes.count.to_f)*100).round
+      class_adjust = Vote.determine_vote(current_user, params[:item_id], params[:direction])
+      percentage = Item.find(params[:item_id]).calculate_percentage
 
       respond_to do |format|
-        msg = { percentage: percentage, class_adjust: class_adjust }
-        format.json { render :json => msg }
+        format.json { render :json => { percentage: percentage, class_adjust: class_adjust } }
       end
-      
     end
-
   end
-
-  private
-
-  def user_has_voted_on_item?
-    !current_user.votes.find_by_item_id(params[:item_id]).nil?
-  end
-
-  def directions_match?
-    current_user.votes.find_by_item_id(params[:item_id]).direction == params[:direction]
-  end
-
+  
 end
