@@ -37,22 +37,25 @@
 	color: purple;
 }
 
-.display_text {
-	font-size: large;
-	margin-left: 20%;
-	margin-right: auto;
-	color: #4682b4;
-	font-family: "helvetica";
+.display_text  {
+	color: #fff5ee;
+	font-family: helvetica;
 	font-weight: bold;
+	text-align: center;
+	font-size: 1.4em;
+	margin: auto;
 }
 
 /*D3 Bubble Chart Style*/
 .infobox {
-				margin: 0 auto;
-				display: none;
-        position: absolute;
-        width: 280px;
-        background-color: rgba(255,255,255,.75);
+	display: none;
+  position: absolute;
+  width: 300px;
+  background-color: rgba(255,255,255,.20);
+  padding: 0.2em;
+  border: solid 2px #4c4c4c;
+  margin: .5em;
+  color: #fff5ee;
 }
 
 .agedisplay {
@@ -60,11 +63,14 @@
 }
 
 .itembox {
-				margin: 0 auto;
-				display: none;
-        position: absolute;
-        width: 280px;
-        background-color: rgba(255,255,255,.75);
+	display: none;
+  position: absolute;
+  width: 300px;
+  background-color: rgba(255,255,255,.20);
+  padding: 0.2em;
+  border: solid 2px #4c4c4c;
+  margin: .5em;
+  color: #fff5ee;
 }
 
 .itemdisplay {
@@ -72,7 +78,13 @@
 }
 
 .menu_head_text {
-font-family: arial, sans-serif;
-color: #fff5ee;
+	font-family: arial, sans-serif;
+	color: #fff5ee;
+	font-size: 2em;
+}
+
+.visual-object-info {
+	margin: auto;
+	font-weight: bold;
 }
 
