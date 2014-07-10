@@ -1,4 +1,4 @@
-class AgeBubble
+class AgeBubbleNodePresenter
   attr_accessor :restaurant_id
   def initialize(restaurant_id)
     @restaurant_votes = Item.where(restaurant_id: restaurant_id).map(&:votes).flatten
