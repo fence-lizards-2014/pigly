@@ -1,12 +1,13 @@
 .bg_color {
 	background-color: #5F6B61;
 }
+
 .main_logo {
 	width: 20em;
 	height: auto;
 }​
 
-/*--- MODIFY CSS BELOW SO BOTH AREN'T NECESSARY*/
+
 .votes a {
 	text-decoration: none;
 	font-size: large;
@@ -16,7 +17,7 @@
 	text-decoration: none;
 	font-size: large;
 }
-/*-----------*/
+
 
 .ss-like {
 	color: green;
@@ -40,51 +41,50 @@
 	color: #fff5ee;
 	font-family: helvetica;
 	font-weight: bold;
-		text-align: center;
-		font-size: 1.4em;
-		/*max-width: 45%;*/
-		margin: auto;
-    /*margin-top: 0.6em;
-    margin-bottom: 0.6em;*/
-
+	text-align: center;
+	font-size: 1.4em;
+	margin: auto;
 }
 
 /*D3 Bubble Chart Style*/
 .infobox {
-				display: none;
-        position: absolute;
-        width: 300px;
-        background-color: rgba(255,255,255,.20);
-        padding: 0.2em;
-        border: solid 2px #4c4c4c;
-        margin: .5em;
-        color: #fff5ee;
+	display: none;
+  position: absolute;
+  width: 300px;
+  background-color: rgba(255,255,255,.20);
+  padding: 0.2em;
+  border: solid 2px #4c4c4c;
+  margin: .5em;
+  color: #fff5ee;
 }
+
 .agedisplay {
 	margin: 0 auto;
 }
 
 .itembox {
-				display: none;
-        position: absolute;
-        width: 300px;
-        background-color: rgba(255,255,255,.20);
-        padding: 0.2em;
-        border: solid 2px #4c4c4c;
-        margin: .5em;
-        color: #fff5ee;
+	display: none;
+  position: absolute;
+  width: 300px;
+  background-color: rgba(255,255,255,.20);
+  padding: 0.2em;
+  border: solid 2px #4c4c4c;
+  margin: .5em;
+  color: #fff5ee;
 }
+
 .itemdisplay {
 	margin: 0 auto;
 }
 
 .menu_head_text {
-font-family: arial, sans-serif;
-color: #fff5ee;
-font-size: 2em;
+	font-family: arial, sans-serif;
+	color: #fff5ee;
+	font-size: 2em;
 }
 
 .visual-object-info {
 	margin: auto;
 	font-weight: bold;
 }
+
