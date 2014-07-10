@@ -1,5 +1,5 @@
 <div class="restaurant_container">
-	<h1><%= @restaurant.name %> </h1>
+	<h1 class="menu_head_text"><%= @restaurant.name %> </h1>
 
 	<div id="tab-container" class="tab-container">
 	  <ul class='tab-bar' style="display:none;">
@@ -264,10 +264,16 @@ var itemDataSet = {
   edges: rawEdges
 };
 // canvas size
-var itemWidth = 280
-var itemHeight = 375
+var itemWidth = 320
+var itemHeight = 320
 // color design
-var itemColor = d3.scale.category20b();
+d3.scale.categorySS = function() {
+  return d3.scale.ordinal().range(
+    ssColors);
+}
+var ssColors = ["#f7fcb9","#addd8e","#31a354","#ffffcc","#c2e699","#78c679","#238443","#ffffcc","#c2e699","#78c679","#31a354","#006837","#ffffcc","#d9f0a3","#addd8e","#78c679","#31a354","#006837","#ffffcc","#d9f0a3","#addd8e","#78c679","#41ab5d","#238443","#005a32","#ffffe5","#f7fcb9","#d9f0a3","#addd8e","#78c679","#41ab5d","#238443","#005a32","#ffffe5","#f7fcb9","#d9f0a3","#addd8e","#78c679","#41ab5d","#238443","#006837","#004529"];
+
+var itemColor = d3.scale.categorySS();
 // create canvas
 var itemSvg = d3.select(".itemdisplay").append("svg")
     .attr("width", itemWidth)
@@ -278,8 +284,8 @@ var itemForce = d3.layout
                   .nodes(itemDataSet.nodes)
                   .links(itemDataSet.edges)
                   .size([itemWidth, itemHeight])
-                  .linkDistance([70])
-                  .charge([-400])
+                  .linkDistance([100])
+                  .charge([-500])
                   .start();
 // define edges
 var itemEdges = itemSvg.selectAll("line")

@@ -1,5 +1,5 @@
 .bg_color {
-	background-color: #87ceeb;
+	background-color: #5F6B61;
 }
 .main_logo {
 	width: 20em;
@@ -66,4 +66,9 @@
 }
 .itemdisplay {
 	margin: 0 auto;
+}
+
+.menu_head_text {
+font-family: arial, sans-serif;
+color: #fff5ee;
 }
