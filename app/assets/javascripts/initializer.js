@@ -16,6 +16,9 @@ function bindEvents(controller) {
     controller.processVoteClick(controller, data, clickedObject)
   })
 
+  // google.maps.event.trigger(map, 'resize');
+  //   map.panTo(marker.getPosition())
+
    $('#tab-container').easytabs();
 
 
