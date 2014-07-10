@@ -4,10 +4,9 @@
   <title>Pigly</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag "webfonts/ss-symbolicons-line" %>
-  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{GOOGLE_API_KEY}"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}"></script>
   <meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 <body class="bg_color">

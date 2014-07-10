@@ -15,4 +15,5 @@
 /tmp
 
 /app/assets/stylesheets/webfonts/*
-
+/coverage/*
+flog_output.txt
