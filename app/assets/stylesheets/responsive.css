@@ -9,6 +9,34 @@
   background-color: #fff5ee;
 	}
 
+  input[type="email"], textarea {
+  background-color: #fff5ee;
+  }
+
+  input[type="password"], textarea {
+  background-color: #fff5ee;
+  }
+
+  .main_search a:hover {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  text-decoration: none;
+  }
+
+  #user_gender {
+    background-color: #fff5ee;
+  }
+
+  .user_submit_button input {
+    background-color: #fff5ee;
+  }
+
+  .new_user_submit_button textarea {
+    color: #fff5ee;
+  }
+
 	.fb-button {
 		width: 20em;
 	}
@@ -20,6 +48,11 @@
 		text-align: center;
 	}
 
+  .tab-bar a {
+    background-color: #222222;
+    text-decoration: none;
+  }
+
 	.tab-container {
 		margin-top: 0.3em;
 		margin-right: 0.2em;
@@ -28,20 +61,21 @@
 
 	.tab { display: inline-block; zoom:1; *display:inline; background: #eee; border: solid 1px #999; border-bottom: none; -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; }
 	.tab a { font-size: 14px; line-height: 2em; display: block; padding: 0 10px; outline: none; }
-	.tab a:hover { text-decoration: underline; }
+	.tab a:hover { text-decoration: none; }
 	.tab.active { background: #fff; padding-top: 6px; position: relative; top: 1px; border-color: #666; }
 	.tab a.active { font-weight: bold; }
 	.tab-container .panel-container { background: #fff; border: solid #666 1px; padding: 10px; -moz-border-radius: 0 4px 4px 4px; -webkit-border-radius: 0 4px 4px 4px; }
 
 
   #menu-tab {
-  	background: #fff;
-    font-size: 1em;
+    border-radius: .5em;
+  	background: #fff5ee;
   }
 
   #menu-tab h2 {
   	text-align: center;
      padding-top: 0.2em;
+     font-size: 1.5em;
   }
 
 	#wrapper {
@@ -54,7 +88,12 @@
 	#nav-menu {
 		position:fixed;
 		width: 100%;
-	}
+  }
+
+  #nav-menu a {
+    color: #fff5ee;
+  }
+
 
 	#menu {
 		display: none;
@@ -86,7 +125,8 @@
 
 	.restaurant_container h1 {
   	text-align: center;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    line-height: 1em
   }
 
 	.content {
@@ -130,6 +170,10 @@
 		text-align: center;
 	}
 
+  .main_search p {
+    color: #fff5ee;
+  }
+
 	#restaurant_name::-moz-placeholder {
 		font-size: 1.1em;
 		text-align: center;
@@ -150,7 +194,7 @@
   }
 
 	.item {
-    margin: 1.2em;
+    margin: 1.4em;
 		/*display: block;*/
 		/*border: 1px red solid;*/
 	}
@@ -160,24 +204,14 @@
 		text-align: center;
 		font-size: 1.4em;
 		max-width: 45%;
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
     text-overflow: ellipsis;
     white-space: pre;
     overflow: hidden;
-    /*overflow-x: scroll;
-    white-space: pre;
-    word-wrap: initial;*/
     width: 10em;
+    height: 1em;
 	}
-
-
-  .item .item-ellipse {
-    text-overflow: ellipsis;
-    white-space: pre;
-    overflow: hidden;
-    width: 12em;
-  }
 
 
 	.item .votes {
@@ -188,6 +222,9 @@
 		margin-right: 15%;
 	}
 
+.open-text-box {
+  display: none;
+}
 
 	.vote-holder {
 		font-size: 1.4em;
@@ -222,7 +259,7 @@
     cursor: pointer;
     background-color: #4c4c4c;
     }
-  }
+
 
   #error_explanation {
   	max-width: 20em;
@@ -235,21 +272,27 @@
 
   #front-page-notice {
   	margin-top: 1em;
-  	color: green;
+  	color: #fff5ee;
   }
 
   #info-tab {
-  	font-size: 1em;
   	margin-top: 1em;
   }
 
-  #map-canvas { 
+  #info-tab p {
+    font-size: 1.2em;
+    color: #fff5ee;
+    text-align: center;
+    }
+
+  #map-canvas {
   	position: relative;
   	margin-top: 1em;
-  	height: 20em;
-  	width: 20em;
+  	height: 25em;
+  	width: 25em;
   	margin-right: auto;
   	margin-left: auto;
+    border: solid 4px #4c4c4c;
   }
 
 }
@@ -271,7 +314,5 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-	.main_search {
 
-	}
 }
