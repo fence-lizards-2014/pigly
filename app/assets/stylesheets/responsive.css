@@ -99,12 +99,13 @@
   #menu-tab {
     border-radius: .5em;
   	background: #fff5ee;
-    font-size: 1em;
+  /*  font-size: 1em;*/
   }
 
   #menu-tab h2 {
   	text-align: center;
      padding-top: 0.2em;
+     font-size: 1em;
   }
 
 	#wrapper {
