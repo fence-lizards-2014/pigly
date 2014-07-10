@@ -70,6 +70,9 @@
 </div>
 
 <script type="text/javascript">
+  $(function() {
+    new GoogleMapFactory(<%= @restaurant.latitude %>, <%= @restaurant.longitude %>).create();
+  });
 </script>
 
 <script type="text/javascript">
