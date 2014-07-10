@@ -5,21 +5,33 @@ describe UsersController do
     @user = create(:user)
   end
 
-  context 'create user' do
+  context '#new' do
+    it 'should assign @user as new user' do
+      get :new
+      expect(assigns(:user)).to be_a_new(User)
+      expect(response).to render_template("new")
+    end
+  end
 
-     it 'redirects to the root path upon save' do
+  context 'create user' do
+    it 'redirects to the root path upon save' do
       post :create, user: attributes_for(:user)
       expect(response).to redirect_to root_url
     end
-  end
 
     context 'with valid attributes' do
+      it 'saves a new user in the database' do
+        expect{
+          post :create, user: attributes_for(:user)
+        }.to change(User, :count).by(1)
+      end
+    end
 
-     it 'saves a new user in the database' do
-      expect{
-        post :create, user: attributes_for(:user)
-      }.to change(User, :count).by(1)
+    context 'with invalid attributes' do
+      it 're-renders the new page' do
+        post :create, user: attributes_for(:user, password: nil)
+        expect(response).to render_template :new
+      end
     end
   end
 end
-
