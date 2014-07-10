@@ -50,14 +50,14 @@
         <div class="itembox">
           <p id="visual-object-info"></p>
         </div>
-        </div>
+      </div>
 
 
 	   <!--  <p class="display_text">Gender Distribution</p>
 	  	<div class="genderdisplay">
 		  	<div class="genderdisplay2"></div>
       </div> -->
-		  </div>
+		</div>
 
 	  <div id="info-tab">
 	  	<p>Address: <%= @restaurant.address %></p>
@@ -71,25 +71,9 @@
 </div>
 
 <script type="text/javascript">
-  function initialize() {
-  	var myLatlng = new google.maps.LatLng(<%= @restaurant.latitude %>,<%= @restaurant.longitude %>);
-    var mapOptions = {
-      center: myLatlng,
-      zoom: 16,
-      panControl: false,
-      zoomControl: false,
-      streetViewControl: false,
-      mapTypeControl: false
-    };
-    var map = new google.maps.Map(document.getElementById("map-canvas"),
-        mapOptions);
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: 'Hello World!'
+  $(function() {
+    new GoogleMapFactory(<%= @restaurant.latitude %>, <%= @restaurant.longitude %>).create();
   });
-	}
-	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
 <script type="text/javascript">
@@ -134,20 +118,20 @@ var color = d3.scale.category10()
 // The largest node for each cluster.
 var clusters = new Array(m);
 
-var nodes = d3.range(n).map(function() {
-  var i = nodes_info[counter].group_num;
-  var age = nodes_info[counter].age;
-  var percentage = nodes_info[counter].total_positive_votes / nodes_info[counter].total_group_votes
-  var r = percentage * (ageMaxRadius + 1);
+var nodes =         d3.range(n).map(function() {
+  var i =           nodes_info[counter].group_num;
+  var age =         nodes_info[counter].age;
+  var percentage =  nodes_info[counter].total_positive_votes / nodes_info[counter].total_group_votes
+  var r =           percentage * (ageMaxRadius + 1);
   var d = {
-        age: nodes_info[counter].age,
-        group: nodes_info[counter].group,
-        total_group_votes: nodes_info[counter].total_group_votes,
-        votes_percentage: Math.floor(percentage * 100),
-        cluster: i,
-        radius: r,
-        x: Math.cos(i / m * 2 * Math.PI) * 200 + ageWidth / 2 + Math.random(),
-        y: Math.sin(i / m * 2 * Math.PI) * 200 + ageHeight / 2 + Math.random()
+        age:                nodes_info[counter].age,
+        group:              nodes_info[counter].group,
+        total_group_votes:  nodes_info[counter].total_group_votes,
+        votes_percentage:   Math.floor(percentage * 100),
+        cluster:            i,
+        radius:             r,
+        x:                  Math.cos(i / m * 2 * Math.PI) * 200 + ageWidth / 2 + Math.random(),
+        y:                  Math.sin(i / m * 2 * Math.PI) * 200 + ageHeight / 2 + Math.random()
       };
 
   counter += 1

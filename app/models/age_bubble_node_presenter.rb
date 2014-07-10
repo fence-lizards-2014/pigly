@@ -1,4 +1,4 @@
-class AgeBubble
+class AgeBubbleNodePresenter
   attr_accessor :restaurant_id
   def initialize(restaurant_id)
     @restaurant_votes = Item.where(restaurant_id: restaurant_id).map(&:votes).flatten
@@ -62,10 +62,8 @@ class AgeBubble
 
     get_group_hash = create_nodes
     get_group_hash.each do |age, node|
-      i = 0
-      while i <= 4
+      5.times do |i|
         node[:total_group_votes] = totals[i] if node[:group_num] == i
-        i += 1
       end
    end
    return get_group_hash.values

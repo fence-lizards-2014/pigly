@@ -18,7 +18,6 @@ function bindEvents(controller) {
 
    $('#tab-container').easytabs();
 
-
    $('.item-info').on("click", function(){
      var fullText = this.nextElementSibling
      if (fullText.style["display"] === "none") {
@@ -28,6 +27,7 @@ function bindEvents(controller) {
         fullText.style["display"] = "none";
     }
    });
+
 };
 
 
