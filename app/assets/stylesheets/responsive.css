@@ -59,12 +59,46 @@
 		margin-left: 0.2em;
 	}
 
-	.tab { display: inline-block; zoom:1; *display:inline; background: #eee; border: solid 1px #999; border-bottom: none; -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; }
-	.tab a { font-size: 14px; line-height: 2em; display: block; padding: 0 10px; outline: none; }
-	.tab a:hover { text-decoration: none; }
-	.tab.active { background: #fff; padding-top: 6px; position: relative; top: 1px; border-color: #666; }
-	.tab a.active { font-weight: bold; }
-	.tab-container .panel-container { background: #fff; border: solid #666 1px; padding: 10px; -moz-border-radius: 0 4px 4px 4px; -webkit-border-radius: 0 4px 4px 4px; }
+	.tab { display: inline-block;
+    zoom:1; *display:inline;
+    background: #eee;
+    border: solid 1px #999;
+    border-bottom: none;
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+  }
+
+	.tab a {
+    font-size: 14px;
+    line-height: 2em;
+    display: block;
+    padding: 0 10px;
+    outline: none;
+  }
+
+	.tab a:hover {
+    text-decoration: none;
+  }
+
+	.tab.active {
+    background: #fff;
+    padding-top: 6px;
+    position: relative;
+    top: 1px;
+    border-color: #666;
+  }
+
+	.tab a.active {
+    font-weight: bold;
+  }
+
+	.tab-container .panel-container {
+    background: #fff;
+    border: solid #666 1px;
+    padding: 10px;
+    -moz-border-radius: 0 4px 4px 4px;
+    -webkit-border-radius: 0 4px 4px 4px;
+  }
 
 
   #menu-tab {
@@ -75,7 +109,8 @@
   #menu-tab h2 {
   	text-align: center;
      padding-top: 0.2em;
-     font-size: 1.5em;
+     font-size: 1em;
+
   }
 
 	#wrapper {
@@ -195,8 +230,6 @@
 
 	.item {
     margin: 1.4em;
-		/*display: block;*/
-		/*border: 1px red solid;*/
 	}
 
 	.item .item-info {
@@ -222,9 +255,9 @@
 		margin-right: 15%;
 	}
 
-.open-text-box {
-  display: none;
-}
+  .open-text-box {
+    display: none;
+  }
 
 	.vote-holder {
 		font-size: 1.4em;
@@ -233,9 +266,9 @@
 	.ui-autocomplete {
     max-height: 100px;
     overflow-y: auto;
-    /* prevent horizontal scrollbar */
     overflow-x: hidden;
   }
+
   /* IE 6 doesn't support max-height
    * we use height instead, but this forces the menu to always be this tall
    */
@@ -251,15 +284,13 @@
     float: center;
     text-align: center;
     color: #ffffff;
-  /*  position: relative;*/
     display: block;
     vertical-align: middle;
     padding: 0.438em 0.625em 0.438em 0.625em;
     line-height: 1.125em;
     cursor: pointer;
     background-color: #4c4c4c;
-    }
-
+  }
 
   #error_explanation {
   	max-width: 20em;
@@ -283,7 +314,7 @@
     font-size: 1.2em;
     color: #fff5ee;
     text-align: center;
-    }
+  }
 
   #map-canvas {
   	position: relative;
@@ -294,7 +325,6 @@
   	margin-left: auto;
     border: solid 4px #4c4c4c;
   }
-
 }
 
 /* Extra Small Devices, Phones */
