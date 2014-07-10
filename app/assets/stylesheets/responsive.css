@@ -112,6 +112,7 @@
 		margin-bottom: 0.1em;
 		border-bottom: 1px solid black;
 		font-size: 0.4em;
+    color: white;
 	}
 
 	.facebook_photo {
@@ -293,6 +294,10 @@
   	margin-right: auto;
   	margin-left: auto;
     border: solid 4px #4c4c4c;
+  }
+
+  #restaurant_not_found {
+  	font-size: 3.5em;
   }
 
 }
