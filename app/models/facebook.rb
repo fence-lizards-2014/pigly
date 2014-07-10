@@ -2,7 +2,7 @@ class Facebook
   include HTTParty
   base_uri 'https://graph.facebook.com'
 
-  FACEBOOK_REDIRECT_URI = "http://local.foo.com:3000/facebook"
+  FACEBOOK_REDIRECT_URI = "http://dbc-pigly.herokuapp.com/facebook"
 
   def self.get_token(code)
     returned_key = self.get("/oauth/access_token?client_id=#{ENV['FACEBOOK_CLIENT']}&redirect_uri=#{FACEBOOK_REDIRECT_URI}&client_secret=#{ENV['FACEBOOK_SECRET']}&code=#{code}")
