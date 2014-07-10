@@ -4,11 +4,8 @@ Pigly::Application.configure do
   # Code is not reloaded between requests
   config.cache_classes = true
 
-  config.assets.precompile << Proc.new { |path|
-    if path =~ /\.(eot|svg|ttf|woff)\z/
-      true
-    end
-  }
+  config.assets.paths << Rails.root.join('app', 'assets', 'stylesheets/webfonts')
+  config.assets.precompile += %w( .svg .eot .woff .ttf)
 
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
