@@ -48,6 +48,11 @@
 		text-align: center;
 	}
 
+  .tab-bar a {
+    background-color: #222222;
+    text-decoration: none;
+  }
+
 	.tab-container {
 		margin-top: 0.3em;
 		margin-right: 0.2em;
@@ -56,7 +61,7 @@
 
 	.tab { display: inline-block; zoom:1; *display:inline; background: #eee; border: solid 1px #999; border-bottom: none; -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; }
 	.tab a { font-size: 14px; line-height: 2em; display: block; padding: 0 10px; outline: none; }
-	.tab a:hover { text-decoration: underline; }
+	.tab a:hover { text-decoration: none; }
 	.tab.active { background: #fff; padding-top: 6px; position: relative; top: 1px; border-color: #666; }
 	.tab a.active { font-weight: bold; }
 	.tab-container .panel-container { background: #fff; border: solid #666 1px; padding: 10px; -moz-border-radius: 0 4px 4px 4px; -webkit-border-radius: 0 4px 4px 4px; }
@@ -65,12 +70,12 @@
   #menu-tab {
     border-radius: .5em;
   	background: #fff5ee;
-    font-size: 1em;
   }
 
   #menu-tab h2 {
   	text-align: center;
      padding-top: 0.2em;
+     font-size: 1.5em;
   }
 
 	#wrapper {
@@ -83,7 +88,12 @@
 	#nav-menu {
 		position:fixed;
 		width: 100%;
-	}
+  }
+
+  #nav-menu a {
+    color: #fff5ee;
+  }
+
 
 	#menu {
 		display: none;
@@ -184,7 +194,7 @@
   }
 
 	.item {
-    margin: 1.2em;
+    margin: 1.4em;
 		/*display: block;*/
 		/*border: 1px red solid;*/
 	}
@@ -192,14 +202,15 @@
 	.item .item-info {
 		display: inline-block;
 		text-align: center;
-		font-size: 1.2em;
+		font-size: 1.4em;
 		max-width: 45%;
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
     text-overflow: ellipsis;
     white-space: pre;
     overflow: hidden;
     width: 10em;
+    height: 1em;
 	}
 
 
@@ -248,7 +259,7 @@
     cursor: pointer;
     background-color: #4c4c4c;
     }
-  }
+
 
   #error_explanation {
   	max-width: 20em;
@@ -265,17 +276,23 @@
   }
 
   #info-tab {
-  	font-size: 1em;
   	margin-top: 1em;
   }
+
+  #info-tab p {
+    font-size: 1.2em;
+    color: #fff5ee;
+    text-align: center;
+    }
 
   #map-canvas {
   	position: relative;
   	margin-top: 1em;
-  	height: 20em;
-  	width: 20em;
+  	height: 25em;
+  	width: 25em;
   	margin-right: auto;
   	margin-left: auto;
+    border: solid 4px #4c4c4c;
   }
 
 }
@@ -297,7 +314,5 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-	.main_search {
 
-	}
 }
