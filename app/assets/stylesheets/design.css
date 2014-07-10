@@ -1,12 +1,13 @@
 .bg_color {
 	background-color: #5F6B61;
 }
+
 .main_logo {
 	width: 20em;
 	height: auto;
 }​
 
-/*--- MODIFY CSS BELOW SO BOTH AREN'T NECESSARY*/
+
 .votes a {
 	text-decoration: none;
 	font-size: large;
@@ -16,7 +17,7 @@
 	text-decoration: none;
 	font-size: large;
 }
-/*-----------*/
+
 
 .ss-like {
 	color: green;
@@ -53,6 +54,7 @@
         width: 280px;
         background-color: rgba(255,255,255,.75);
 }
+
 .agedisplay {
 	margin: 0 auto;
 }
@@ -64,6 +66,7 @@
         width: 280px;
         background-color: rgba(255,255,255,.75);
 }
+
 .itemdisplay {
 	margin: 0 auto;
 }
