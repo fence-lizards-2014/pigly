@@ -1,0 +1,134 @@
+.bg_color {
+	background-color: #5F6B61;
+}
+
+.main_logo {
+	width: 20em;
+	height: auto;
+}​
+
+.votes a {
+	text-decoration: none;
+	font-size: large;
+}
+
+.ss-like, .ss-dislike {
+	text-decoration: none;
+	font-size: large;
+}
+
+.ss-like {
+	color: green;
+}
+
+.ss-dislike {
+	color: red;
+}
+
+.femaledisplay, .maledisplay {
+	/*margin-left: 20%;
+	margin-right: auto;*/
+}
+
+.ss-females, .ss-males {
+	font-size: xx-large;
+	color: purple;
+}
+
+.display_text  {
+	color: #fff5ee;
+	font-family:  helvetica;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.4em;
+	margin: auto;
+}
+
+/*D3 Bubble Chart Style*/
+.infobox {
+	display: none;
+  position: absolute;
+  width: 300px;
+  background-color: rgba(255,255,255,.20);
+  padding: 0.2em;
+  border: solid 2px #4c4c4c;
+  margin: .5em;
+  color: rgba(0,0,0,.95);
+}
+
+.agedisplay {
+	margin: 0 auto;
+}
+
+.itembox {
+  display: none;
+  position: absolute;
+  width: 300px;
+  background-color: rgba(255,255,255,.20);
+  padding: 0.2em;
+  border: solid 2px #4c4c4c;
+  margin: .5em;
+  color: rgba(0,0,0,.95);
+}
+
+.itemdisplay {
+  margin: 0 auto;
+}
+
+.visual-object-info {
+  margin: auto;
+  font-weight: bold;
+  font-family:  helvetica;
+}
+
+.visual-object-info p {
+  font-family:  helvetica;
+}
+
+.ss-pig {
+ text-decoration: none;
+ font-size: 1.2em;
+}
+
+.scroll {
+  font-family:  helvetica, sans-serif;
+  font-size: 1.5em;
+}
+
+.item-info {
+  font-family:  helvetica, sans-serif;
+}
+
+#menu-tab {
+  font-family:  helvetica, sans-serif;
+  border-radius: .5em;
+  background: #fff5ee;
+}
+
+#data-info {
+  font-family:  helvetica, sans-serif;
+}
+
+.restaurant_info {
+  background-color: #fff5ee;
+  border-radius: .5em;
+}
+
+.restaurant_info p {
+  padding-top: .5em;
+  padding-bottom: .1em;
+  font-family: helvetica, sans-serif;
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+  }
+
+  .restaurant_info a {
+    text-decoration: none;
+  }
+
+  .open-text-box {
+    padding: 0.2em;
+    background-color: rgba(0,0,0,.20);
+    border-radius: 0.3em;
+  }

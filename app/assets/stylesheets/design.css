@@ -1,90 +1,114 @@
 .bg_color {
-	background-color: #5F6B61;
+background-color:#5F6B61;
 }
 
 .main_logo {
-	width: 20em;
-	height: auto;
-}​
-
-
-.votes a {
-	text-decoration: none;
-	font-size: large;
+width:20em;
+height:auto;
 }
-
-.ss-like, .ss-dislike {
-	text-decoration: none;
-	font-size: large;
-}
-
 
 .ss-like {
-	color: green;
+color:green;
 }
 
 .ss-dislike {
-	color: red;
+color:red;
 }
 
-.femaledisplay, .maledisplay {
-	/*margin-left: 20%;
-	margin-right: auto;*/
+.ss-females,.ss-males {
+font-size:xx-large;
+color:purple;
 }
 
-.ss-females, .ss-males {
-	font-size: xx-large;
-	color: purple;
-}
-
-.display_text  {
-	color: #fff5ee;
-	font-family: helvetica;
-	font-weight: bold;
-	text-align: center;
-	font-size: 1.4em;
-	margin: auto;
-}
-
-/*D3 Bubble Chart Style*/
-.infobox {
-	display: none;
-  position: absolute;
-  width: 300px;
-  background-color: rgba(255,255,255,.20);
-  padding: 0.2em;
-  border: solid 2px #4c4c4c;
-  margin: .5em;
-  color: #fff5ee;
-}
-
-.agedisplay {
-	margin: 0 auto;
-}
-
-.itembox {
-	display: none;
-  position: absolute;
-  width: 300px;
-  background-color: rgba(255,255,255,.20);
-  padding: 0.2em;
-  border: solid 2px #4c4c4c;
-  margin: .5em;
-  color: #fff5ee;
-}
-
-.itemdisplay {
-	margin: 0 auto;
+.display_text {
+color:#fff5ee;
+font-family:helvetica;
+font-weight:700;
+text-align:center;
+font-size:1.4em;
+margin:auto;
 }
 
 .menu_head_text {
-	font-family: arial, sans-serif;
-	color: #fff5ee;
-	font-size: 2em;
+font-family: 'Parisienne', helvetica, sans-serif;
+font-size:3em;
+font-weight:bold;
+color:#d17474;
 }
 
 .visual-object-info {
-	margin: auto;
-	font-weight: bold;
+font-weight:700;
+font-family:helvetica;
+margin:auto;
 }
 
+.ss-pig {
+text-decoration:none;
+font-size:1.2em;
+}
+
+.scroll {
+font-size:1.5em;
+}
+
+#menu-tab {
+border-radius:.5em;
+background:#fff5ee;
+}
+
+.menu_header {
+background-color:rgba(0,0,0,.20);
+padding-bottom:.3em;
+}
+
+.restaurant_footer {
+  border-radius: 10em ;
+}
+
+.restaurant_info {
+background-color:#fff5ee;
+border-radius:.5em;
+}
+
+.restaurant_info p {
+padding-top:.5em;
+padding-bottom:.1em;
+font-size:1.2em;
+color:#000;
+text-align:center;
+}
+
+.restaurant_info a {
+text-decoration:none;
+}
+
+.open-text-box {
+background-color:rgba(0,0,0,.20);
+border-radius:.3em;
+padding:.2em;
+}
+
+​
+.votes a,.ss-like,.ss-dislike {
+text-decoration:none;
+font-size:large;
+}
+
+.infobox,.itembox {
+display:none;
+position:absolute;
+width:300px;
+background-color:rgba(255,255,255,.20);
+border:solid 2px #4c4c4c;
+color:rgba(0,0,0,.95);
+margin:.5em;
+padding:.2em;
+}
+
+.agedisplay,.itemdisplay {
+margin:0 auto;
+}
+
+.item-info,#data-info {
+font-family:helvetica, sans-serif;
+}

@@ -62,7 +62,6 @@
 	.tab { display: inline-block;
     zoom:1; *display:inline;
     background: #eee;
-    border: solid 1px #999;
     border-bottom: none;
     -moz-border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
@@ -100,17 +99,10 @@
     -webkit-border-radius: 0 4px 4px 4px;
   }
 
-
-  #menu-tab {
-    border-radius: .5em;
-  	background: #fff5ee;
-  }
-
   #menu-tab h2 {
-  	text-align: center;
-     padding-top: 0.2em;
-     font-size: 1em;
-
+    text-align: center;
+    padding-top: 0.7em;
+    font-size: 1.5em;
   }
 
 	#wrapper {
@@ -161,7 +153,6 @@
 
 	.restaurant_container h1 {
   	text-align: center;
-    font-size: 1.4em;
     line-height: 1em
   }
 
@@ -291,6 +282,7 @@
     line-height: 1.125em;
     cursor: pointer;
     background-color: #4c4c4c;
+    text-decoration: none;
   }
 
   #error_explanation {
@@ -310,21 +302,23 @@
   #info-tab {
   	margin-top: 1em;
   }
-
   #info-tab p {
     font-size: 1.2em;
-    color: #fff5ee;
-    text-align: center;
   }
 
   #map-canvas {
   	position: relative;
-  	margin-top: 1em;
-  	height: 25em;
-  	width: 25em;
+  	height: 23em;
+  	width: 23em;
   	margin-right: auto;
   	margin-left: auto;
     border: solid 4px #4c4c4c;
+    border-radius: .5em;
+  }
+  .restaurant_info {
+    width: 23em;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   #restaurant_not_found {
