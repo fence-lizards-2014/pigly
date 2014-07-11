@@ -1,6 +1,6 @@
 <div class='main_search'>
 	<p>To see what your friends like:</p>
-	<%= link_to image_tag("login_with_facebook.png", :border => 0, :class => 'fb-button'), "https://www.facebook.com/dialog/oauth?client_id=1476091199299474&scope=email,user_friends&redirect_uri=http://local.foo.com:3000/facebook" %>
+	<%= link_to image_tag("login_with_facebook.png", :border => 0, :class => 'fb-button'), "https://www.facebook.com/dialog/oauth?client_id=1476091199299474&scope=email,user_friends&redirect_uri=http://dbc-pigly.herokuapp.com/facebook" %>
 
 	<% flash.each do |key, value| %>
 	  <%= content_tag :div, value, class: "flash #{key}" %>
