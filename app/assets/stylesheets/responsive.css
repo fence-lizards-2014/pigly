@@ -118,7 +118,7 @@
   }
 
   #nav-menu a {
-    color: #fff5ee;
+    /*color: #fff5ee;*/
   }
 
 
@@ -304,6 +304,7 @@
   }
   #info-tab p {
     font-size: 1.2em;
+    color: black;
   }
 
   #map-canvas {
@@ -319,6 +320,7 @@
     width: 23em;
     margin-right: auto;
     margin-left: auto;
+    color: black;
   }
 
   #restaurant_not_found {

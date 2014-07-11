@@ -72,14 +72,14 @@
     <!-- Restaurant Visualize -->
 	  <div id="visualize-tab">
 
-      <p class="display_text">Pigglest favorites items:</p>
+      <p class="display_text">Pigglets' Favorite Items:</p>
       <div class="itemdisplay">
         <div class="itembox">
           <p id="visual-object-info"></p>
         </div>
       </div>
 
-      <p class="display_text">Other pigglets voted:</p>
+      <p class="display_text">How Pigglets Voted:</p>
       <div class="agedisplay">
         <div class="infobox">
           <p id="data-info"></p>
@@ -315,8 +315,8 @@ var itemForce = d3.layout
                   .nodes(itemDataSet.nodes)
                   .links(itemDataSet.edges)
                   .size([itemWidth, itemHeight])
-                  .linkDistance([150])
-                  .charge([-500])
+                  .linkDistance([20])
+                  .charge([-150])
                   .start();
 // define edges
 var itemEdges = itemSvg.selectAll("line")
