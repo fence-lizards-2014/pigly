@@ -4,6 +4,9 @@ Pigly::Application.configure do
   # Code is not reloaded between requests
   config.cache_classes = true
 
+  config.assets.paths << Rails.root.join('app', 'assets', 'webfonts')
+  config.assets.precompile += %w( .svg .eot .woff .ttf)
+
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
@@ -15,7 +18,7 @@ Pigly::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true

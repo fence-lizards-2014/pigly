@@ -53,7 +53,7 @@
   padding: 0.2em;
   border: solid 2px #4c4c4c;
   margin: .5em;
-  color: rgba(0,0,0,.95);
+  /*color: rgba(0,0,0,.95);*/
 }
 
 .agedisplay {
@@ -68,7 +68,7 @@
   padding: 0.2em;
   border: solid 2px #4c4c4c;
   margin: .5em;
-  color: rgba(0,0,0,.95);
+  /*color: rgba(0,0,0,.95);*/
 }
 
 .itemdisplay {
@@ -125,6 +125,7 @@
 
   .restaurant_info a {
     text-decoration: none;
+    color: black;
   }
 
   .open-text-box {
