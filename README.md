@@ -38,7 +38,7 @@ We saw an opportunity in the food industry. We analyze the most popular apps ava
 ## Team and main responsibilities
 
 Shawn Seibert:
-* Team lead. 
+* Team lead
 * Facilitate his knowledge in D3 and encourage other team members to learn and play with that library.
 * Developed model, controller, views and JavaScript logic behind the Force Plot visualization
 * Design Database structure
