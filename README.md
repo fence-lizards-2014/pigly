@@ -39,16 +39,16 @@ We saw an opportunity in the food industry. We analyze the most popular apps ava
 
 Shawn Seibert:
 * Team lead
-* Facilitate his knowledge in D3 and encourage other team members to learn and play with that library.
+* Facilitated his knowledge in D3 and encourage other team members to learn and play with that library
 * Developed model, controller, views and JavaScript logic behind the Force Plot visualization
-* Design Database structure
+* Designed Database structure
 * CSS designer
 
 Christiane Kammerl:
 * Developed the voting logic using JS widget design pattern and AJAX.
 * Developed truncate affects for the restaurant UI.
 * During the development of the D3 visualization, supported and pair programed
-* Design Database structure
+* Designed Database structure
 
 Adam Dziuk
 * Developed Ruby on Rails structure
