@@ -1,6 +1,6 @@
 module UsersHelper
 
-	def logged_in?
+  def logged_in?
     !current_user.nil?
   end
 
@@ -13,5 +13,3 @@ module UsersHelper
   end
 
 end
-
-

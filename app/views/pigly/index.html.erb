@@ -1,29 +1,27 @@
 <div class='main_search'>
-	<div><%= image_tag "Pigly-logo.png", :class => "main_logo" %></div>
-	</br>
-	<%= form_for @restaurant, url: search_restaurants_path do |restaurant_form| %>
-		<%= restaurant_form.text_field :name, :placeholder => "Search For A Restaurant..." %>
-	<% end %>
-	<% if flash[:notice] %>
-		<div id="front-page-notice"><%= flash[:notice] %></div>
-	<% end %>
+  <div><%= image_tag "Pigly-logo.png", :class => "main_logo" %></div>
+  </br>
+  <%= form_for @restaurant, url: search_restaurants_path do |restaurant_form| %>
+    <%= restaurant_form.text_field :name, :placeholder => "Search For A Restaurant..." %>
+  <% end %>
+  <% if flash[:notice] %>
+    <div id="front-page-notice"><%= flash[:notice] %></div>
+  <% end %>
 </div>
-
-
 
 <script>
   $(document).ready(function() {
     $('.tab').hide();
   });
   $(function() {
-   	var restaurant_names = <%= raw @names %>;
-   	var searchBox = $('#restaurant_name');
+    var restaurant_names = <%= raw @names %>;
+    var searchBox = $('#restaurant_name');
     searchBox.autocomplete({
       source: restaurant_names,
 
       select: function(e, ui) {
         if (event.type == 'click') {
-      	 $(e.target).val(event.target.innerHTML); 
+         $(e.target).val(event.target.innerHTML); 
         }
         $(e.target).parents("form").submit();
       }

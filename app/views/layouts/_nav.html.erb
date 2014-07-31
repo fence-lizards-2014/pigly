@@ -1,22 +1,22 @@
 <div id="nav-menu"></div>
-	<ul id="menu">
-	<% if logged_in? %>
-		<% if facebook_user? %>
-			<li><a class="scroll" href="/friends">Friends Feed</a></li>
-		<% end %>
-		<li><a class="scroll" href="/logout">Sign Out</a></li>
-	<% else %>
-		<li><a class="scroll" href="/sessions/new">Sign In</a></li>
-		<li><a class="scroll" href="/users/new">Sign Up</a></li>
-	<% end %>
-	</ul>
+  <ul id="menu">
+  <% if logged_in? %>
+    <% if facebook_user? %>
+      <li><a class="scroll" href="/friends">Friends Feed</a></li>
+    <% end %>
+    <li><a class="scroll" href="/logout">Sign Out</a></li>
+  <% else %>
+    <li><a class="scroll" href="/sessions/new">Sign In</a></li>
+    <li><a class="scroll" href="/users/new">Sign Up</a></li>
+  <% end %>
+  </ul>
 
 <script>
-	$(document).ready(function(){ $('#tab-container').easytabs(); });
-	$(function(){
-		$('#menu').slicknav({
-			label: '',
-			prependTo:'#nav-menu'
-		});
-	});
+  $(document).ready(function(){ $('#tab-container').easytabs(); });
+  $(function(){
+    $('#menu').slicknav({
+      label: '',
+      prependTo:'#nav-menu'
+    });
+  });
 </script>

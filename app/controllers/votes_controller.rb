@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
 
-	def create
+  def create
     # First, check if user is signed in. If user is a guest, the client 
     # will alert them to log in before attempting to vote.
     if !logged_in?
