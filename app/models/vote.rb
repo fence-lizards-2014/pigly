@@ -1,22 +1,22 @@
 class Vote < ActiveRecord::Base
-	attr_accessible :direction, :user_id, :item_id
-	belongs_to :item
-	belongs_to :user
+  attr_accessible :direction, :user_id, :item_id
+  belongs_to :item
+  belongs_to :user
 
-	validates :user_id, :uniqueness => { :scope => :item_id }
+  validates :user_id, :uniqueness => { :scope => :item_id }
 
-	def liked?
-		if self.direction == "up"
-			"liked"
-		elsif self.direction == "down"
-			"disliked"
-		end
-	end
+  def liked?
+    if self.direction == "up"
+      "liked"
+    elsif self.direction == "down"
+      "disliked"
+    end
+  end
 
-	private
+  private
 
-	def self.determine_vote(current_user, given_item_id, direction)
-		if Vote.user_has_voted_on_item?(current_user, given_item_id) && Vote.directions_match?(current_user, given_item_id, direction)
+  def self.determine_vote(current_user, given_item_id, direction)
+    if Vote.user_has_voted_on_item?(current_user, given_item_id) && Vote.directions_match?(current_user, given_item_id, direction)
       current_user.votes.find_by_item_id(given_item_id).destroy
       class_adjust = 'destroy'
     elsif Vote.user_has_voted_on_item?(current_user, given_item_id) && !Vote.directions_match?(current_user, given_item_id, direction)
@@ -29,7 +29,7 @@ class Vote < ActiveRecord::Base
       vote.save
       class_adjust = 'new'
     end
-	end
+  end
 
   def self.user_has_voted_on_item?(current_user, given_item_id)
     !current_user.votes.find_by_item_id(given_item_id).nil?

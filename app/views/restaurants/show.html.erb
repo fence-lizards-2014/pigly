@@ -1,21 +1,21 @@
 <div class="restaurant_container">
-	<h1 class="menu_head_text"><%= @restaurant.name %> </h1>
+  <h1 class="menu_head_text"><%= @restaurant.name %> </h1>
 
   <!-- Nav Bar Center Buttons -->
-	<div id="tab-container" class="tab-container">
-	  <ul class='tab-bar' style="display:none;">
-	    <li class='tab'><a href="#menu-tab"></a></li>
-	    <li class='tab'><a href="#visualize-tab"></a></li>
-	    <li class='tab'><a href="#info-tab"></a></li>
-	  </ul>
+  <div id="tab-container" class="tab-container">
+    <ul class='tab-bar' style="display:none;">
+      <li class='tab'><a href="#menu-tab"></a></li>
+      <li class='tab'><a href="#visualize-tab"></a></li>
+      <li class='tab'><a href="#info-tab"></a></li>
+    </ul>
 
     <!-- Restaurant 5 first Items -->
-	  <div id="menu-tab">
+    <div id="menu-tab">
       <div class="menu_header">
-	     <h2>Menu</h2>
+       <h2>Menu</h2>
       </div>
-	    <% @top_five_items.each do |item| %>
-			  <%= div_for(item, class: "top_five_items") do %>
+      <% @top_five_items.each do |item| %>
+        <%= div_for(item, class: "top_five_items") do %>
         <div class="votes">
           <% if logged_in? %>
             <% if current_user.votes.where(item_id: item.id, direction: "up").any? %>
@@ -37,13 +37,13 @@
           </div>
           <div class="item-info"><%= item.name %></div>
             <div class="open-text-box"><%= item.name %></div>
-			  <% end %>
-			<% end %>
+        <% end %>
+      <% end %>
 
       <!-- Restaurant Rest of the Items on More -->
-			<a class="show_all_items_btn" href="javascript:unhideItems()"><span class="slicknav_menutxt">MORE</span></a>
-			 <% @remaining_items.each do |item| %>
-			  <%= div_for(item, class: "remaining_items") do %>
+      <a class="show_all_items_btn" href="javascript:unhideItems()"><span class="slicknav_menutxt">MORE</span></a>
+       <% @remaining_items.each do |item| %>
+        <%= div_for(item, class: "remaining_items") do %>
          <div class="votes">
           <% if logged_in? %>
             <% if current_user.votes.where(item_id: item.id, direction: "up").any? %>
@@ -63,14 +63,14 @@
               <%= link_to '', votes_path(direction: 'down', item_id: item.id), remote: true, method: 'post', id: 'downvote', class: 'ss-dislike'%>
           <% end %>
           </div>
-			    <div class="item-info" class="item-ellipse"><%= item.name %></div>
+          <div class="item-info" class="item-ellipse"><%= item.name %></div>
            <div class="open-text-box"><%= item.name %></div>
-			  <% end %>
-			<% end %>
-	  </div>
+        <% end %>
+      <% end %>
+    </div>
 
     <!-- Restaurant Visualize -->
-	  <div id="visualize-tab">
+    <div id="visualize-tab">
 
       <p class="display_text">Pigglest favorites items:</p>
       <div class="itemdisplay">
@@ -86,17 +86,17 @@
         </div>
       </div>
 
-		</div>
+    </div>
 
     <!-- Restaurant Info -->
-	  <div id="info-tab">
+    <div id="info-tab">
       <div class="restaurant_info">
-  	  	<p class="restaurant_info_p">Address: <%= @restaurant.address %></p>
-  	  	<a href= "<%= @restaurant.website %>" ><p class="restaurant_info_p">Website: <%= @restaurant.website %></p></a>
-  	  	<p class="restaurant_info_p">Phone Number: <%= @restaurant.phone %></p>
+        <p class="restaurant_info_p">Address: <%= @restaurant.address %></p>
+        <a href= "<%= @restaurant.website %>" ><p class="restaurant_info_p">Website: <%= @restaurant.website %></p></a>
+        <p class="restaurant_info_p">Phone Number: <%= @restaurant.phone %></p>
       </div>
-	  	<div id="map-canvas"/></div>
-	</div>
+      <div id="map-canvas"/></div>
+  </div>
 
 </div>
 

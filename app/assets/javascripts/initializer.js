@@ -32,12 +32,3 @@ function bindEvents(controller) {
     }
    });
 };
-
-
-
-
-
-
-
-
-
