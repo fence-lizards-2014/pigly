@@ -13,7 +13,7 @@ DevBootcamp Students developed Pigly in 7 days.
 
 After 8 weeks of an intense learning experience, developing multiple Rails and Sinatra CRUD apps, deploying group projects and having fun with JavaScript we decided to create Pigly.
 
-As a team we started with the idea of building a customizable dashboard/analytics platform using D3.js. But the lack of clarity on the use and business case made use narrow the scope 2 days into the project.
+As a team we started with the idea of building a customizable dashboard/analytics platform using D3.js. But the lack of clarity on the use and business case made us narrow the scope 2 days into the project.
 We saw an opportunity in the food industry. We analyze the most popular apps available and decided to build one that users can vote on menu items.
 
 
