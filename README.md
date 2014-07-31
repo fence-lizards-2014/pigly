@@ -23,7 +23,7 @@ We saw an opportunity in the food industry. We analyze the most popular apps ava
 * D3.js
 * API’s: Facebook, Google Maps & Locu
 * AJAX
-* Jquery
+* JQuery
 
 
 ## Interesting code
