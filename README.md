@@ -37,25 +37,25 @@ We saw an opportunity in the food industry. We analyze the most popular apps ava
 
 ## Team and main responsibilities
 
-[Shawn Seibert](www.linkedin.com/in/shawn01001):
+[Shawn Seibert](https://www.linkedin.com/in/shawn01001):
 * Team lead
 * Facilitated his knowledge in D3 and encourage other team members to learn and play with that library
 * Developed model, controller, views and JavaScript logic behind the Force Plot visualization
 * Designed Database structure
 * CSS designer
 
-[Christiane Kammerl](www.linkedin.com/pub/christiane-kammerl/a/235/4):
+[Christiane Kammerl](https://www.linkedin.com/pub/christiane-kammerl/a/235/4):
 * Developed the voting logic using JS widget design pattern and AJAX.
 * Developed truncate affects for the restaurant UI.
 * During the development of the D3 visualization, supported and pair programed
 * Designed Database structure
 
-[Adam Dziuk](www.linkedin.com/in/amdziuk):
+[Adam Dziuk](https://www.linkedin.com/in/amdziuk):
 * Developed Ruby on Rails structure
 * Developed all Pigly’s communication with API’s. Models, helpers, views and keys security
 * Wrote the entire test suit for the app. 90+% coverage using Rspec
 
-[Sebastian Belmar Ponce](www.linkedin.com/pub/sebastian-belmar-ponce/54/633/459/):
+[Sebastian Belmar Ponce](https://www.linkedin.com/pub/sebastian-belmar-ponce/54/633/459/):
 * Developed model, controller, views and JavaScript logic behind the Bubble Plot visualization
 * During the development of the Locu API communication, supported and pair programed
 * Developed CSS final design
