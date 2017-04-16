@@ -21,7 +21,7 @@ color:purple;
 }
 
 .display_text {
-color:#fff5ee;
+/*color:#fff5ee;*/
 font-family:helvetica;
 font-weight:700;
 text-align:center;
@@ -33,7 +33,7 @@ margin:auto;
 font-family: 'Parisienne', helvetica, sans-serif;
 font-size:3em;
 font-weight:bold;
-color:#d17474;
+/*color:#d17474;*/
 }
 
 .visual-object-info {
@@ -74,7 +74,7 @@ border-radius:.5em;
 padding-top:.5em;
 padding-bottom:.1em;
 font-size:1.2em;
-color:#000;
+/*color:#000;*/
 text-align:center;
 }
 
